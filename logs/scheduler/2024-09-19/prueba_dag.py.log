@@ -1,0 +1,98 @@
+[2024-09-19T00:00:03.821+0000] {processor.py:186} INFO - Started process (PID=93) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:00:03.822+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:00:03.824+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:00:03.823+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:00:03.831+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:00:04.162+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:00:04.162+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:00:04.178+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:00:04.178+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:00:04.191+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.374 seconds
+[2024-09-19T00:00:34.344+0000] {processor.py:186} INFO - Started process (PID=100) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:00:34.345+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:00:34.347+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:00:34.346+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:00:34.498+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:00:34.516+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:00:34.515+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:00:34.533+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:00:34.532+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:00:34.555+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.216 seconds
+[2024-09-19T00:01:04.788+0000] {processor.py:186} INFO - Started process (PID=107) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:01:04.797+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:01:04.799+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:01:04.799+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:01:04.809+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:01:04.834+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:01:04.833+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:01:04.855+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:01:04.855+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:01:04.869+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.088 seconds
+[2024-09-19T00:01:34.960+0000] {processor.py:186} INFO - Started process (PID=114) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:01:34.961+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:01:34.962+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:01:34.962+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:01:34.972+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:01:34.995+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:01:34.995+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:01:35.019+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:01:35.018+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:01:35.034+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.079 seconds
+[2024-09-19T00:02:05.202+0000] {processor.py:186} INFO - Started process (PID=121) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:02:05.210+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:02:05.212+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:02:05.212+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:02:05.220+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:02:05.244+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:02:05.243+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:02:05.266+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:02:05.265+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:02:05.281+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.083 seconds
+[2024-09-19T00:02:35.381+0000] {processor.py:186} INFO - Started process (PID=128) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:02:35.391+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:02:35.394+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:02:35.393+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:02:35.404+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:02:35.428+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:02:35.428+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:02:35.447+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:02:35.447+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:02:35.459+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.083 seconds
+[2024-09-19T00:03:05.597+0000] {processor.py:186} INFO - Started process (PID=135) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:03:05.598+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:03:05.600+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:03:05.599+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:03:05.609+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:03:05.631+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:03:05.630+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:03:05.650+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:03:05.649+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:03:05.663+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.071 seconds
+[2024-09-19T00:03:35.777+0000] {processor.py:186} INFO - Started process (PID=142) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:03:35.778+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:03:35.780+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:03:35.780+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:03:35.790+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:03:35.813+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:03:35.813+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:03:35.833+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:03:35.833+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:03:35.848+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.076 seconds
+[2024-09-19T00:04:05.992+0000] {processor.py:186} INFO - Started process (PID=149) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:04:05.993+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:04:05.996+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:04:05.995+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:04:06.005+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:04:06.028+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:04:06.028+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:04:06.049+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:04:06.049+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:04:06.062+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.076 seconds
+[2024-09-19T00:04:36.179+0000] {processor.py:186} INFO - Started process (PID=156) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:04:36.188+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:04:36.190+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:04:36.190+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:04:36.200+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:04:36.226+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:04:36.225+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:04:36.247+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:04:36.247+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:04:36.259+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.086 seconds
+[2024-09-19T00:05:06.401+0000] {processor.py:186} INFO - Started process (PID=163) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:05:06.410+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:05:06.413+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:05:06.413+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:05:06.423+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:05:06.448+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:05:06.448+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:05:06.469+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:05:06.469+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:05:06.482+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.089 seconds
+[2024-09-19T00:05:36.593+0000] {processor.py:186} INFO - Started process (PID=170) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:05:36.602+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:05:36.605+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:05:36.605+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:05:36.615+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:05:36.640+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:05:36.640+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:05:36.659+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:05:36.658+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:05:36.671+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.084 seconds
+[2024-09-19T00:06:06.838+0000] {processor.py:186} INFO - Started process (PID=177) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:06:06.847+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:06:06.850+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:06:06.850+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:06:06.859+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:06:06.881+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:06:06.881+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:06:06.900+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:06:06.900+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:06:06.913+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.080 seconds
+[2024-09-19T00:06:37.019+0000] {processor.py:186} INFO - Started process (PID=184) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:06:37.028+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-19T00:06:37.031+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:06:37.031+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:06:37.040+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-19T00:06:37.066+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:06:37.066+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-19T00:06:37.086+0000] {logging_mixin.py:190} INFO - [2024-09-19T00:06:37.086+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-18 13:00:00+00:00, run_after=2024-09-19 10:00:00+00:00
+[2024-09-19T00:06:37.098+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.084 seconds
