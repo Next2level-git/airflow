@@ -180,7 +180,7 @@ class OneDriveConnection:
             writer_excel = pd.ExcelWriter(buffer, engine=engine)
             for key, value in data.items():
                 value.to_excel(
-                    writer_excel, sheet_name=key, index=False, encoding=encoding
+                    writer_excel, sheet_name=key, index=False, encoding=encodingresponse.json()
                 )
             writer_excel.save()
 
@@ -355,30 +355,6 @@ class OneDriveConnection:
                             data.append(row_data)
 
                 headers = data[headers]
-                df = pd.DataFrame(data[1:], columns=headers)
-                df.dropna(axis=1, how="all", inplace=True)
-                df.dropna(axis=0, how="all", inplace=True)
-            else:
-                # Si es un archivo XLSX (usando openpyxl)
-                excel_data = response.content
-                excel_workbook = load_workbook(
-                    filename=BytesIO(excel_data), read_only=True, data_only=True
-                )
-                if sheetname is None:
-                    sheet = excel_workbook.active
-                else:
-                    sheet = excel_workbook[sheetname]
-                data = []
-                for row in sheet.iter_rows(
-                    min_row=start_cell[0],
-                    max_row=end_cell[0],
-                    min_col=start_cell[1],
-                    max_col=end_cell[1],
-                ):
-                    row_data = [cell.value for cell in row]
-                    data.append(row_data)
-
-                headers = data[3]  # Assuming the first row contains headers
                 df = pd.DataFrame(data[1:], columns=headers)
                 df.dropna(axis=1, how="all", inplace=True)
                 df.dropna(axis=0, how="all", inplace=True)
