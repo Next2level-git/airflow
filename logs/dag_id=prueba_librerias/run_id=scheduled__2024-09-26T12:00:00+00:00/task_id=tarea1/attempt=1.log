@@ -1,0 +1,30 @@
+[2024-09-27T17:30:02.464+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-27T17:30:02.491+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: prueba_librerias.tarea1 scheduled__2024-09-26T12:00:00+00:00 [queued]>
+[2024-09-27T17:30:02.500+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: prueba_librerias.tarea1 scheduled__2024-09-26T12:00:00+00:00 [queued]>
+[2024-09-27T17:30:02.501+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-27T17:30:02.518+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): tarea1> on 2024-09-26 12:00:00+00:00
+[2024-09-27T17:30:02.530+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=72) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-27T17:30:02.532+0000] {standard_task_runner.py:72} INFO - Started process 80 to run task
+[2024-09-27T17:30:02.532+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'prueba_librerias', 'tarea1', 'scheduled__2024-09-26T12:00:00+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/prueba_dag.py', '--cfg-path', '/tmp/tmp6b5xo2c9']
+[2024-09-27T17:30:02.533+0000] {standard_task_runner.py:105} INFO - Job 68: Subtask tarea1
+[2024-09-27T17:30:02.594+0000] {task_command.py:467} INFO - Running <TaskInstance: prueba_librerias.tarea1 scheduled__2024-09-26T12:00:00+00:00 [running]> on host d04eec5d81d3
+[2024-09-27T17:30:02.695+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='daniel.cristancho' AIRFLOW_CTX_DAG_ID='prueba_librerias' AIRFLOW_CTX_TASK_ID='tarea1' AIRFLOW_CTX_EXECUTION_DATE='2024-09-26T12:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-26T12:00:00+00:00'
+[2024-09-27T17:30:02.696+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-27T17:30:04.353+0000] {logging_mixin.py:190} INFO -   columna1  columna2
+0     None       123
+1               None
+2    00000      1111
+3    12345       456
+4    11111          
+5   abcdef      0000
+6      222  repeated
+7    33333       789
+8     test      9999
+[2024-09-27T17:30:04.354+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-27T17:30:04.363+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-27T17:30:04.364+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=prueba_librerias, task_id=tarea1, run_id=scheduled__2024-09-26T12:00:00+00:00, execution_date=20240926T120000, start_date=20240927T173002, end_date=20240927T173004
+[2024-09-27T17:30:04.432+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-27T17:30:04.449+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-27T17:30:04.450+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
