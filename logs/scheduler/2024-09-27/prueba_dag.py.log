@@ -3078,3 +3078,46 @@ SyntaxError: invalid syntax
 [2024-09-27T21:03:24.006+0000] {logging_mixin.py:190} INFO - [2024-09-27T21:03:24.006+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2024-09-27T21:03:24.033+0000] {logging_mixin.py:190} INFO - [2024-09-27T21:03:24.033+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-27 13:00:00+00:00, run_after=2024-09-28 10:00:00+00:00
 [2024-09-27T21:03:24.045+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.080 seconds
+[2024-09-27T22:39:29.703+0000] {processor.py:186} INFO - Started process (PID=39) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-27T22:39:29.704+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-27T22:39:29.706+0000] {logging_mixin.py:190} INFO - [2024-09-27T22:39:29.705+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T22:39:29.725+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T22:39:29.759+0000] {logging_mixin.py:190} INFO - [2024-09-27T22:39:29.758+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-27T22:39:29.786+0000] {logging_mixin.py:190} INFO - [2024-09-27T22:39:29.785+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-27 13:00:00+00:00, run_after=2024-09-28 10:00:00+00:00
+[2024-09-27T22:39:29.801+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.103 seconds
+[2024-09-27T22:39:59.885+0000] {processor.py:186} INFO - Started process (PID=46) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-27T22:39:59.886+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-27T22:39:59.891+0000] {logging_mixin.py:190} INFO - [2024-09-27T22:39:59.890+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T22:39:59.909+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T22:39:59.958+0000] {logging_mixin.py:190} INFO - [2024-09-27T22:39:59.957+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-27T22:40:00.008+0000] {logging_mixin.py:190} INFO - [2024-09-27T22:40:00.008+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-27 13:00:00+00:00, run_after=2024-09-28 10:00:00+00:00
+[2024-09-27T22:40:00.047+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.174 seconds
+[2024-09-27T23:02:42.743+0000] {processor.py:186} INFO - Started process (PID=39) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:02:42.744+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-27T23:02:42.746+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:42.745+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:02:42.763+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:02:42.999+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:42.998+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:prueba_librerias
+[2024-09-27T23:02:43.008+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.008+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:prueba_librerias
+[2024-09-27T23:02:43.015+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.015+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:prueba_librerias
+[2024-09-27T23:02:43.021+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.020+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:prueba_librerias
+[2024-09-27T23:02:43.025+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.025+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:prueba_librerias
+[2024-09-27T23:02:43.029+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.029+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:prueba_librerias
+[2024-09-27T23:02:43.033+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.033+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:prueba_librerias
+[2024-09-27T23:02:43.034+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.034+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-27T23:02:43.045+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.045+0000] {dag.py:3252} INFO - Creating ORM DAG for prueba_librerias
+[2024-09-27T23:02:43.054+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:02:43.054+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-26 10:00:00+00:00, run_after=2024-09-26 12:00:00+00:00
+[2024-09-27T23:02:43.066+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.328 seconds
+[2024-09-27T23:03:13.203+0000] {processor.py:186} INFO - Started process (PID=46) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:03:13.204+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-27T23:03:13.206+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:03:13.206+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:03:13.217+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:03:13.244+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:03:13.243+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-27T23:03:13.264+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:03:13.263+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-26 10:00:00+00:00, run_after=2024-09-26 12:00:00+00:00
+[2024-09-27T23:03:13.275+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.079 seconds
+[2024-09-27T23:03:43.338+0000] {processor.py:186} INFO - Started process (PID=53) to work on /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:03:43.346+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/prueba_dag.py for tasks to queue
+[2024-09-27T23:03:43.348+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:03:43.348+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:03:43.356+0000] {processor.py:925} INFO - DAG(s) 'prueba_librerias' retrieved from /opt/airflow/dags/prueba_dag.py
+[2024-09-27T23:03:43.377+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:03:43.377+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-27T23:03:43.395+0000] {logging_mixin.py:190} INFO - [2024-09-27T23:03:43.394+0000] {dag.py:4156} INFO - Setting next_dagrun for prueba_librerias to 2024-09-26 10:00:00+00:00, run_after=2024-09-26 12:00:00+00:00
+[2024-09-27T23:03:43.406+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/prueba_dag.py took 0.072 seconds

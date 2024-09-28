@@ -180,7 +180,10 @@ class OneDriveConnection:
             writer_excel = pd.ExcelWriter(buffer, engine=engine)
             for key, value in data.items():
                 value.to_excel(
-                    writer_excel, sheet_name=key, index=False, encoding=encodingresponse.json()
+                    writer_excel,
+                    sheet_name=key,
+                    index=False,
+                    encoding=encodingresponse.json(),
                 )
             writer_excel.save()
 

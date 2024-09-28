@@ -1,6 +1,6 @@
 from airflow.models import Variable
 import logging
-import request
+import requests
 import pandas as pd
 
 class Request_Data:
@@ -17,9 +17,12 @@ class Request_Data:
     def request_return(self):
 
         data = pd.Dataframe([])
-        response = requests.get(self.url, headers=self.headers, params=self.query_api) 
+        response = requests.get(self.url, headers=self.header, params=self.query_api)
         if response.status_code == 200:
-            data = pd.Dataframe(response.json())
+            data = response.json()
+            data = [item for item in data['response'] if item['fixture']['status']['short'] == 'FT']
+            data = pd.Dataframe(data)
+
         return data
 
 
