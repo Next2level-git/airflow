@@ -1,7 +1,6 @@
 version: '3'
 x-airflow-common:
   &airflow-common
-  # Usamos la imagen personalizada que se construirá con Dockerfile
   build: .  
   environment:
     &airflow-common-env

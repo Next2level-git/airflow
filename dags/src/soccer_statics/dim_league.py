@@ -6,16 +6,17 @@ from datetime import datetime
 import requests
 import base64
 from io import BytesIO
+import cairosvg
 
 from next_connection.data_connection import PostgreSQLConnection
 import src.soccer_statics.queries as queries
 import src.soccer_statics.utils as utils
 
 
-class Dim_Teams:
+class Dim_League:
 
-    def __init__(self, data_teams):
-        self.data_teams = data_teams
+    def __init__(self, data_league):
+        self.data_league = data_league
         self.host_db = Variable.get("HOST_DB_NEXT")
         self.user_db = Variable.get("USER_DB_NEXT")
         self.password_db = Variable.get("PASSWORD_DB_NEXT")
@@ -34,8 +35,8 @@ class Dim_Teams:
         nxdb.create_connection()
         self.__logger.info("Start extract loaded data")
         data = dict()
-        data["dim_teams"] = self.__extract(
-            conn_name=nxdb, query=queries.dim_teams_extract, source="dim_teams"
+        data["dim_league"] = self.__extract(
+            conn_name=nxdb, query=queries.dim_league_extract, source="dim_league"
         )
         self.__logger.info("Start transform data")
         data_to_load, data_to_update = self.transform_data(data=data)
@@ -45,7 +46,7 @@ class Dim_Teams:
                 conn=nxdb,
                 data=data_to_load,
                 schema="soccer",
-                dest_table="dim_teams",
+                dest_table="dim_league",
                 truncate=False,
             )
 
@@ -53,8 +54,8 @@ class Dim_Teams:
             self.__logger.info("Start update old data")
             update_query = utils.cte_update_query(
                 update_df=data_to_update.copy(),
-                fields=utils.DIM_TEAMS_UPDATE_COLUMNS,
-                update_query=queries.update_dim_teams_query.as_string(nxdb),
+                fields=utils.DIM_LEAGUE_UPDATE_COLUMNS,
+                update_query=queries.update_dim_league_query.as_string(nxdb),
             )
             utils.postgresql_execute_query(
                 user=self.user_db,
@@ -68,36 +69,34 @@ class Dim_Teams:
             )
 
     def transform_data(self, data):
-        data_current_dim = data["dim_teams"]
-        data_teams = self.data_teams
-        df_home_team = pd.DataFrame(
-            data_teams["teams"].apply(lambda x: x["home"]).tolist()
-        )
-        df_home_team = df_home_team[["id", "name", "logo"]]
-        df_away_team = pd.DataFrame(
-            data_teams["teams"].apply(lambda x: x["away"]).tolist()
-        )
-        df_away_team = df_home_team[["id", "name", "logo"]]
-        data_teams = pd.concat([df_away_team, df_home_team], ignore_index=True)
-        data_teams = data_teams.reset_index(drop=True)
-        data_teams = data_teams.drop_duplicates(subset=["id"], keep="first")
+        data_current_dim = data["dim_league"]
+        data_league = self.data_league
+        data_league = pd.json_normalize(data_league['league'])
+        data_league = data_league[['id','name','country','logo','flag']]
+        data_league = data_league.drop_duplicates(subset=["id"], keep="first")
+        data_league = data_league.reset_index(drop=True)
         def download_and_convert_to_base64(url):
             try:
                 response = requests.get(url)
                 response.raise_for_status()
-                image_bytes = BytesIO(response.content).getvalue()
-                base64_image = base64.b64encode(image_bytes).decode('utf-8')
+
+                if response.headers['Content-Type'] == 'image/svg+xml':
+                    svg_data = response.content
+                    png_data = cairosvg.svg2png(bytestring=svg_data)
+                else:
+                    png_data = response.content
+                base64_image = base64.b64encode(png_data).decode('utf-8')
                 return base64_image
             except Exception as e:
-                print(f"Error to download logo: {e}")
+                print(f"Error to downlad image: {e}")
                 return None
-        data_teams["image"] = data_teams["logo"].apply(download_and_convert_to_base64)
-        data_teams = data_teams.rename(columns={"id": "id_team",
-                                                "name": "name_team",
-                                                "image": "team_logo"})
-        data_merge_dim = data_teams.merge(
+        data_league["league_logo"] = data_league["logo"].apply(download_and_convert_to_base64)
+        data_league["country_flag"] = data_league["flag"].apply(download_and_convert_to_base64)
+        data_league = data_league.rename(columns={"id": "id_league",
+                                                "name": "name_league"})
+        data_merge_dim = data_league.merge(
             data_current_dim,
-            on=["id_team"],
+            on=["id_league"],
             how="outer",
             suffixes=["", "_crr"],
             indicator=True,
@@ -111,9 +110,9 @@ class Dim_Teams:
             result_append["updated_at"] = pd.to_datetime(
                 datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
             )
-            result_append["id_team"] = result_append["id_team"].astype("Int64")
+            result_append["id_league"] = result_append["id_league"].astype("Int64")
             result_append = result_append[
-                ["uuid", "id_team", "name_team", "created_at", "updated_at"]
+                ["uuid", "id_league", "country","name_league","league_logo","country_flag", "created_at", "updated_at"]
             ]
         result_update = data_merge_dim[data_merge_dim["_merge"] == "both"]
         result_update = result_update.where(result_update.notnull(), None)
@@ -128,14 +127,18 @@ class Dim_Teams:
 
             result_update["check_update"] = result_update[
                 [
-                    "name_team",
-                    "name_team_crr",
-                    "team_logo",
-                    "team_logo_crr"
+                    "country",
+                    "country_crr",
+                    "name_league",
+                    "name_league_crr",
+                    "league_logo",
+                    "league_logo_crr",
+                    "country_flag",
+                    "country_flag_crr"
                 ]
             ].apply(find_different_columns, axis=1)
             result_update = result_update[result_update["check_update"] != "N"]
-            result_update = result_update[utils.DIM_TEAMS_UPDATE_COLUMNS.keys()]
+            result_update = result_update[utils.DIM_LEAGUE_UPDATE_COLUMNS.keys()]
             result_update["updated_at"] = pd.to_datetime(
                 datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
             )

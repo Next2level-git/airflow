@@ -7,7 +7,7 @@ import sys
 
 from src.soccer_statics.extract_data import Request_Data
 from src.soccer_statics.dim_teams import Dim_Teams
-
+from src.soccer_statics.dim_league import Dim_League
 
 START_DATE = days_ago(1)
 
@@ -33,10 +33,26 @@ def dim_teams(**kwargs):
         data_teams = data_extract[['teams']]
         pf = Dim_Teams(data_teams=data_teams)
         pf.run()
-        print("****************** Success process update basics datamart finance")
+        print("****************** Success process update dim teams")
     except:
         print(
-            "****************** Unexpected error update basics datamart finance: ",
+            "****************** Unexpected error update dim teams: ",
+            sys.exc_info(),
+        )
+        raise
+
+def dim_league(**kwargs):
+    try:
+        ti = kwargs["ti"]
+        data_extract = ti.xcom_pull(task_ids='extract_data', key='data_extract')
+        data_extract = pd.read_json(data_extract)
+        data_league = data_extract[['league']]
+        pf = Dim_League(data_league=data_league)
+        pf.run()
+        print("****************** Success process update dim league")
+    except:
+        print(
+            "****************** Unexpected error update dim league: ",
             sys.exc_info(),
         )
         raise
@@ -69,4 +85,10 @@ dim_teams = PythonOperator(
     dag=dag,
 )
 
-extract_data >> dim_teams
+dim_league = PythonOperator(
+    task_id="dim_league",
+    python_callable=dim_league,
+    dag=dag,
+)
+
+extract_data >> [dim_teams,dim_league]
