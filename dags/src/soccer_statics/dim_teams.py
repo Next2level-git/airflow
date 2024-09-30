@@ -5,7 +5,7 @@ import uuid
 from datetime import datetime
 import requests
 import base64
-from io import BytesIO
+import cairosvg
 
 from next_connection.data_connection import PostgreSQLConnection
 import src.soccer_statics.queries as queries
@@ -66,6 +66,7 @@ class Dim_Teams:
             self.__logger.info(
                 f"The update of {data_to_update.shape[0]} rows was made."
             )
+        nxdb.destroy_connection()
 
     def transform_data(self, data):
         data_current_dim = data["dim_teams"]
@@ -81,20 +82,27 @@ class Dim_Teams:
         data_teams = pd.concat([df_away_team, df_home_team], ignore_index=True)
         data_teams = data_teams.reset_index(drop=True)
         data_teams = data_teams.drop_duplicates(subset=["id"], keep="first")
+
         def download_and_convert_to_base64(url):
             try:
                 response = requests.get(url)
                 response.raise_for_status()
-                image_bytes = BytesIO(response.content).getvalue()
-                base64_image = base64.b64encode(image_bytes).decode('utf-8')
+
+                if response.headers["Content-Type"] == "image/svg+xml":
+                    svg_data = response.content
+                    png_data = cairosvg.svg2png(bytestring=svg_data)
+                else:
+                    png_data = response.content
+                base64_image = base64.b64encode(png_data).decode("utf-8")
                 return base64_image
             except Exception as e:
-                print(f"Error to download logo: {e}")
+                print(f"Error to downlad image: {e}")
                 return None
+
         data_teams["image"] = data_teams["logo"].apply(download_and_convert_to_base64)
-        data_teams = data_teams.rename(columns={"id": "id_team",
-                                                "name": "name_team",
-                                                "image": "team_logo"})
+        data_teams = data_teams.rename(
+            columns={"id": "id_team", "name": "name_team", "image": "team_logo"}
+        )
         data_merge_dim = data_teams.merge(
             data_current_dim,
             on=["id_team"],
@@ -113,7 +121,14 @@ class Dim_Teams:
             )
             result_append["id_team"] = result_append["id_team"].astype("Int64")
             result_append = result_append[
-                ["uuid", "id_team", "name_team", "created_at", "updated_at"]
+                [
+                    "uuid",
+                    "id_team",
+                    "team_logo",
+                    "name_team",
+                    "created_at",
+                    "updated_at",
+                ]
             ]
         result_update = data_merge_dim[data_merge_dim["_merge"] == "both"]
         result_update = result_update.where(result_update.notnull(), None)
@@ -127,12 +142,7 @@ class Dim_Teams:
                 return different_columns if different_columns else "N"
 
             result_update["check_update"] = result_update[
-                [
-                    "name_team",
-                    "name_team_crr",
-                    "team_logo",
-                    "team_logo_crr"
-                ]
+                ["name_team", "name_team_crr", "team_logo", "team_logo_crr"]
             ].apply(find_different_columns, axis=1)
             result_update = result_update[result_update["check_update"] != "N"]
             result_update = result_update[utils.DIM_TEAMS_UPDATE_COLUMNS.keys()]

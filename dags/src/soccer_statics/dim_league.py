@@ -5,7 +5,6 @@ import uuid
 from datetime import datetime
 import requests
 import base64
-from io import BytesIO
 import cairosvg
 
 from next_connection.data_connection import PostgreSQLConnection
@@ -67,33 +66,41 @@ class Dim_League:
             self.__logger.info(
                 f"The update of {data_to_update.shape[0]} rows was made."
             )
+        nxdb.destroy_connection()
 
     def transform_data(self, data):
         data_current_dim = data["dim_league"]
         data_league = self.data_league
-        data_league = pd.json_normalize(data_league['league'])
-        data_league = data_league[['id','name','country','logo','flag']]
+        data_league = pd.json_normalize(data_league["league"])
+        data_league = data_league[["id", "name", "country", "logo", "flag"]]
         data_league = data_league.drop_duplicates(subset=["id"], keep="first")
         data_league = data_league.reset_index(drop=True)
+
         def download_and_convert_to_base64(url):
             try:
                 response = requests.get(url)
                 response.raise_for_status()
 
-                if response.headers['Content-Type'] == 'image/svg+xml':
+                if response.headers["Content-Type"] == "image/svg+xml":
                     svg_data = response.content
                     png_data = cairosvg.svg2png(bytestring=svg_data)
                 else:
                     png_data = response.content
-                base64_image = base64.b64encode(png_data).decode('utf-8')
+                base64_image = base64.b64encode(png_data).decode("utf-8")
                 return base64_image
             except Exception as e:
                 print(f"Error to downlad image: {e}")
                 return None
-        data_league["league_logo"] = data_league["logo"].apply(download_and_convert_to_base64)
-        data_league["country_flag"] = data_league["flag"].apply(download_and_convert_to_base64)
-        data_league = data_league.rename(columns={"id": "id_league",
-                                                "name": "name_league"})
+
+        data_league["league_logo"] = data_league["logo"].apply(
+            download_and_convert_to_base64
+        )
+        data_league["country_flag"] = data_league["flag"].apply(
+            download_and_convert_to_base64
+        )
+        data_league = data_league.rename(
+            columns={"id": "id_league", "name": "name_league"}
+        )
         data_merge_dim = data_league.merge(
             data_current_dim,
             on=["id_league"],
@@ -112,7 +119,16 @@ class Dim_League:
             )
             result_append["id_league"] = result_append["id_league"].astype("Int64")
             result_append = result_append[
-                ["uuid", "id_league", "country","name_league","league_logo","country_flag", "created_at", "updated_at"]
+                [
+                    "uuid",
+                    "id_league",
+                    "country",
+                    "name_league",
+                    "league_logo",
+                    "country_flag",
+                    "created_at",
+                    "updated_at",
+                ]
             ]
         result_update = data_merge_dim[data_merge_dim["_merge"] == "both"]
         result_update = result_update.where(result_update.notnull(), None)
@@ -134,7 +150,7 @@ class Dim_League:
                     "league_logo",
                     "league_logo_crr",
                     "country_flag",
-                    "country_flag_crr"
+                    "country_flag_crr",
                 ]
             ].apply(find_different_columns, axis=1)
             result_update = result_update[result_update["check_update"] != "N"]

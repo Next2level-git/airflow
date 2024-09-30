@@ -8,6 +8,8 @@ import sys
 from src.soccer_statics.extract_data import Request_Data
 from src.soccer_statics.dim_teams import Dim_Teams
 from src.soccer_statics.dim_league import Dim_League
+from src.soccer_statics.fact_matches import Fact_Match
+from src.soccer_statics.fact_matches import Fact_Match_Statics
 
 START_DATE = days_ago(1)
 
@@ -16,7 +18,7 @@ def extract_data(**kwargs):
     try:
         pf = Request_Data()
         data_extract = pf.request_return()
-        kwargs['ti'].xcom_push(key="data_extract", value=data_extract.to_json())
+        kwargs["ti"].xcom_push(key="data_extract", value=data_extract.to_json())
         print("****************** Success process extract data from api scores")
     except:
         print(
@@ -25,12 +27,13 @@ def extract_data(**kwargs):
         )
         raise
 
+
 def dim_teams(**kwargs):
     try:
         ti = kwargs["ti"]
-        data_extract = ti.xcom_pull(task_ids='extract_data', key='data_extract')
+        data_extract = ti.xcom_pull(task_ids="extract_data", key="data_extract")
         data_extract = pd.read_json(data_extract)
-        data_teams = data_extract[['teams']]
+        data_teams = data_extract[["teams"]]
         pf = Dim_Teams(data_teams=data_teams)
         pf.run()
         print("****************** Success process update dim teams")
@@ -41,12 +44,13 @@ def dim_teams(**kwargs):
         )
         raise
 
+
 def dim_league(**kwargs):
     try:
         ti = kwargs["ti"]
-        data_extract = ti.xcom_pull(task_ids='extract_data', key='data_extract')
+        data_extract = ti.xcom_pull(task_ids="extract_data", key="data_extract")
         data_extract = pd.read_json(data_extract)
-        data_league = data_extract[['league']]
+        data_league = data_extract[["league"]]
         pf = Dim_League(data_league=data_league)
         pf.run()
         print("****************** Success process update dim league")
@@ -56,6 +60,35 @@ def dim_league(**kwargs):
             sys.exc_info(),
         )
         raise
+
+
+def fact_matches(**kwargs):
+    try:
+        ti = kwargs["ti"]
+        data_extract = ti.xcom_pull(task_ids="extract_data", key="data_extract")
+        data_extract = pd.read_json(data_extract)
+        pf = Fact_Match(data_extract=data_extract)
+        pf.run()
+        print("****************** Success process update fact matches")
+    except:
+        print(
+            "****************** Unexpected error update fact matches: ",
+            sys.exc_info(),
+        )
+        raise
+
+def fact_matches_statistics():
+    try:
+        pf = Fact_Match_Statics()
+        pf.run()
+        print("****************** Success process update fact matches statistics")
+    except:
+        print(
+            "****************** Unexpected error update fact matches statistics: ",
+            sys.exc_info(),
+        )
+        raise
+
 
 default_args = {
     "owner": "daniel.cristancho",
@@ -91,4 +124,16 @@ dim_league = PythonOperator(
     dag=dag,
 )
 
-extract_data >> [dim_teams,dim_league]
+fact_matches = PythonOperator(
+    task_id="fact_matches",
+    python_callable=fact_matches,
+    dag=dag,
+)
+
+fact_matches_statistics = PythonOperator(
+    task_id="fact_matches_statistics",
+    python_callable=fact_matches_statistics,
+    dag=dag,
+)
+
+extract_data >> [dim_teams, dim_league] >> fact_matches >> fact_matches_statistics

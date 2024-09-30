@@ -1,9 +1,11 @@
 from psycopg2 import sql
 
-dim_teams_extract = sql.SQL("""
+dim_teams_extract = sql.SQL(
+    """
 SELECT "uuid", id_team, name_team, created_at, updated_at, team_logo
 FROM soccer.dim_teams;
-""")
+"""
+)
 
 update_dim_teams_query = sql.SQL(
     """
@@ -16,10 +18,12 @@ update_dim_teams_query = sql.SQL(
     """
 )
 
-dim_league_extract = sql.SQL("""
+dim_league_extract = sql.SQL(
+    """
 SELECT "uuid", id_league, country, name_league, league_logo, country_flag, created_at, updated_at
 FROM soccer.dim_league;
-""")
+"""
+)
 
 update_dim_league_query = sql.SQL(
     """
@@ -32,4 +36,22 @@ update_dim_league_query = sql.SQL(
     FROM cte AS t
     WHERE f.uuid::text = t.uuid::text;
     """
+)
+
+fact_matches_extract = sql.SQL(
+    """
+SELECT id_match
+FROM soccer.fact_matches;
+"""
+)
+
+fact_matches_statistics_extract = sql.SQL(
+    """
+SELECT id_match,date_match,"uuid"
+FROM soccer.fact_matches fm 
+LEFT JOIN soccer.fact_matches_statistics fms ON fm."uuid" = fms.uuid_match 
+WHERE fms."uuid" IS NULL
+ORDER BY 2 DESC
+LIMIT 5
+"""
 )

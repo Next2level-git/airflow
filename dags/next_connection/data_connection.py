@@ -4,6 +4,7 @@ import psycopg2
 import sqlalchemy
 from abc import ABC
 
+
 class DataConnection(ABC):
 
     def create_connection(self):
@@ -42,7 +43,16 @@ class DataConnection(ABC):
 class PostgreSQLConnection(DataConnection):
     """Creates and manages a PostgreSQL connection"""
 
-    def __init__(self, user, password, host_name, database, schema='public', engine=None, connection=None):
+    def __init__(
+        self,
+        user,
+        password,
+        host_name,
+        database,
+        schema="public",
+        engine=None,
+        connection=None,
+    ):
         self.user = user
         self.password = password
         self.host_name = host_name
@@ -54,10 +64,13 @@ class PostgreSQLConnection(DataConnection):
     def create_connection(self):
         try:
             self.engine = sqlalchemy.create_engine(
-                "postgresql+psycopg2://{}:{}@{}/{}".format(self.user, self.password, self.host_name, self.database))
+                "postgresql+psycopg2://{}:{}@{}/{}".format(
+                    self.user, self.password, self.host_name, self.database
+                )
+            )
             self.connection = self.engine.connect()
         except Exception as ex:
-            print('Exception while creating the postgresql connection {}'.format(ex))
+            print("Exception while creating the postgresql connection {}".format(ex))
             raise
 
     def update_query(self, query, values):
@@ -78,10 +91,10 @@ class PostgreSQLConnection(DataConnection):
         try:
             return self.connection.execute(query)
         except Exception as ex:
-            print('Exception while executing the postgresql query {}'.format(ex))
+            print("Exception while executing the postgresql query {}".format(ex))
             raise
 
-    def execute_upsert(self, data_frame, schema, table_name, primary_keys, sep='|'):
+    def execute_upsert(self, data_frame, schema, table_name, primary_keys, sep="|"):
         """
         Function to execute an upsert in a postgresql database given a pandas dataframe
         @type data_frame: pandas.DataFrame
@@ -90,10 +103,13 @@ class PostgreSQLConnection(DataConnection):
         """
         to_be_deleted = data_frame[[x[0] for x in primary_keys]].drop_duplicates()
         if len(to_be_deleted.index) < len(data_frame.index):
-            raise ValueError("Primary key constraint is violated in passed `data_frame`.")
+            raise ValueError(
+                "Primary key constraint is violated in passed `data_frame`."
+            )
         del_stream = io.StringIO()
-        del_stream.write(to_be_deleted.to_csv(sep=sep, encoding='utf8',
-                                              index=False, header=False))
+        del_stream.write(
+            to_be_deleted.to_csv(sep=sep, encoding="utf8", index=False, header=False)
+        )
         del_stream.seek(0)
 
         # stream = io.StringIO()
@@ -103,25 +119,38 @@ class PostgreSQLConnection(DataConnection):
         try:
             conn = self.engine.connect()
             curs = conn.connection.cursor()
-            curs.execute('''CREATE TEMP TABLE to_be_deleted_{0}
+            curs.execute(
+                """CREATE TEMP TABLE to_be_deleted_{0}
                             (
                                 {1}
-                            )'''.format(table_name, ',\n'.join(
-                ['{} {}'.format(*x) for x in primary_keys]))
-                         )
-            curs.copy_from(del_stream, 'to_be_deleted_{0}'.format(table_name), sep=sep)
-            curs.execute('''DELETE FROM
+                            )""".format(
+                    table_name, ",\n".join(["{} {}".format(*x) for x in primary_keys])
+                )
+            )
+            curs.copy_from(del_stream, "to_be_deleted_{0}".format(table_name), sep=sep)
+            curs.execute(
+                """DELETE FROM
                                 {0}.{1}
                             WHERE
                             ({2}) IN (SELECT {2} FROM to_be_deleted_{1})
-                            '''.format(schema, table_name,
-                                       ', '.join([x[0] for x in primary_keys]))
-                         )
-            self.execute_insert(data_frame=data_frame, schema=schema,
-                                table_name=table_name, truncate=False, sep=sep)
+                            """.format(
+                    schema, table_name, ", ".join([x[0] for x in primary_keys])
+                )
+            )
+            self.execute_insert(
+                data_frame=data_frame,
+                schema=schema,
+                table_name=table_name,
+                truncate=False,
+                sep=sep,
+            )
             conn.connection.commit()
         except Exception as exception:
-            print('Failure while upsert data to the table {}. {}'.format(table_name, exception))
+            print(
+                "Failure while upsert data to the table {}. {}".format(
+                    table_name, exception
+                )
+            )
             raise exception
         finally:
             if curs is not None:
@@ -129,7 +158,7 @@ class PostgreSQLConnection(DataConnection):
             if conn is not None:
                 conn.connection.close()
 
-    def execute_insert(self, data_frame, schema, table_name, truncate=False, sep='|'):
+    def execute_insert(self, data_frame, schema, table_name, truncate=False, sep="|"):
         """Function to execute an insert in a postgresql database given a pandas dataframe"""
         try:
 
@@ -140,15 +169,20 @@ class PostgreSQLConnection(DataConnection):
                 frame=data_frame,
                 index=False,
                 schema=schema,
-                if_exists='fail'
+                if_exists="fail",
             )
 
-            columns = str(list(data_frame.columns)).replace('[', '').replace(']', '').replace("'", "")
+            columns = (
+                str(list(data_frame.columns))
+                .replace("[", "")
+                .replace("]", "")
+                .replace("'", "")
+            )
 
             if not table.exists():
                 table.create()
             if truncate:
-                self.execute_query('TRUNCATE TABLE {}.{}'.format(schema, table_name))
+                self.execute_query("TRUNCATE TABLE {}.{}".format(schema, table_name))
 
             # Performing the insert
             string_data_io = io.StringIO()
@@ -159,7 +193,10 @@ class PostgreSQLConnection(DataConnection):
             with self.engine.connect() as connection:
                 try:
                     with connection.connection.cursor() as cursor:
-                        copy_cmd = "COPY %s.%s (%s) FROM STDIN HEADER DELIMITER '%s' CSV" % (schema, table_name, columns, sep)
+                        copy_cmd = (
+                            "COPY %s.%s (%s) FROM STDIN HEADER DELIMITER '%s' CSV"
+                            % (schema, table_name, columns, sep)
+                        )
                         cursor.copy_expert(copy_cmd, string_data_io)
                     connection.connection.commit()
                 finally:
@@ -169,7 +206,11 @@ class PostgreSQLConnection(DataConnection):
                         cursor.close()
 
         except ValueError as exception:
-            print('Failure while inserting data to the table {}. {}'.format(table_name, exception))
+            print(
+                "Failure while inserting data to the table {}. {}".format(
+                    table_name, exception
+                )
+            )
             raise
 
     def create_schema(self, schema: str) -> bool:
@@ -208,11 +249,11 @@ class PostgreSQLConnection(DataConnection):
         return has_schema
 
     def create_table(
-            self,
-            schema: str,
-            table_name: str,
-            df_signature: pd.DataFrame,
-            exists: bool = False,
+        self,
+        schema: str,
+        table_name: str,
+        df_signature: pd.DataFrame,
+        exists: bool = False,
     ) -> bool:
         """Create a table in the particular schema
 
@@ -259,5 +300,5 @@ class PostgreSQLConnection(DataConnection):
             if self.connection is not None:
                 self.connection.close()
         except Exception as ex:
-            print('Exception while destroying the postgresql connection {}'.format(ex))
+            print("Exception while destroying the postgresql connection {}".format(ex))
             raise
