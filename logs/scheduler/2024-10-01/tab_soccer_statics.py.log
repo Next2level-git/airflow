@@ -1,0 +1,337 @@
+[2024-10-01T03:10:37.595+0000] {processor.py:186} INFO - Started process (PID=83) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:10:37.596+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:10:37.597+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:10:37.597+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:10:38.721+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:10:38.851+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:10:38.850+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:10:38.874+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:10:38.874+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:10:38.891+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 1.301 seconds
+[2024-10-01T03:11:09.773+0000] {processor.py:186} INFO - Started process (PID=104) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:11:09.773+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:11:09.776+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:11:09.775+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:11:10.496+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:11:10.534+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:11:10.533+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:11:10.578+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:11:10.578+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:11:10.610+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.842 seconds
+[2024-10-01T03:11:40.992+0000] {processor.py:186} INFO - Started process (PID=124) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:11:41.000+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:11:41.002+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:11:41.002+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:11:41.600+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:11:41.624+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:11:41.624+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:11:41.642+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:11:41.642+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:11:41.661+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.673 seconds
+[2024-10-01T03:12:12.197+0000] {processor.py:186} INFO - Started process (PID=144) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:12:12.205+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:12:12.208+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:12:12.208+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:12:12.864+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:12:12.886+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:12:12.885+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:12:12.903+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:12:12.903+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:12:12.923+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.731 seconds
+[2024-10-01T03:16:00.492+0000] {processor.py:186} INFO - Started process (PID=84) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:16:00.493+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:16:00.495+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:00.495+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:16:02.481+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:16:02.596+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.595+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:tab_soccer_statics
+[2024-10-01T03:16:02.605+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.605+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:tab_soccer_statics
+[2024-10-01T03:16:02.611+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.610+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:tab_soccer_statics
+[2024-10-01T03:16:02.617+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.617+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:tab_soccer_statics
+[2024-10-01T03:16:02.625+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.625+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:tab_soccer_statics
+[2024-10-01T03:16:02.632+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.632+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:tab_soccer_statics
+[2024-10-01T03:16:02.638+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.638+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:tab_soccer_statics
+[2024-10-01T03:16:02.639+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.639+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:16:02.651+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.650+0000] {dag.py:3252} INFO - Creating ORM DAG for tab_soccer_statics
+[2024-10-01T03:16:02.662+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:02.662+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:16:02.673+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 2.186 seconds
+[2024-10-01T03:16:32.772+0000] {processor.py:186} INFO - Started process (PID=105) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:16:32.773+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:16:32.776+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:32.776+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:16:33.433+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:16:33.456+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:33.455+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:16:33.472+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:16:33.472+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:16:33.483+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.717 seconds
+[2024-10-01T03:17:03.896+0000] {processor.py:186} INFO - Started process (PID=125) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:17:03.905+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:17:03.907+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:17:03.907+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:17:04.537+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:17:04.556+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:17:04.555+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:17:04.574+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:17:04.574+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:17:04.590+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.698 seconds
+[2024-10-01T03:17:35.106+0000] {processor.py:186} INFO - Started process (PID=145) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:17:35.115+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:17:35.116+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:17:35.116+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:17:35.730+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:17:35.752+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:17:35.751+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:17:35.771+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:17:35.771+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:17:35.782+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.680 seconds
+[2024-10-01T03:18:06.344+0000] {processor.py:186} INFO - Started process (PID=165) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:18:06.352+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:18:06.354+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:18:06.354+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:18:06.960+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:18:06.982+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:18:06.982+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:18:06.998+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:18:06.997+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:18:07.017+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.677 seconds
+[2024-10-01T03:18:37.549+0000] {processor.py:186} INFO - Started process (PID=185) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:18:37.558+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:18:37.560+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:18:37.560+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:18:38.163+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:18:38.181+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:18:38.181+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:18:38.197+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:18:38.197+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:18:38.211+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.669 seconds
+[2024-10-01T03:19:08.755+0000] {processor.py:186} INFO - Started process (PID=205) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:19:08.763+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:19:08.765+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:19:08.765+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:19:09.377+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:19:09.402+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:19:09.401+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:19:09.421+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:19:09.420+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:19:09.431+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.680 seconds
+[2024-10-01T03:19:39.966+0000] {processor.py:186} INFO - Started process (PID=225) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:19:39.967+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:19:39.969+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:19:39.968+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:19:41.070+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:19:41.115+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:19:41.114+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:19:41.151+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:19:41.151+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:19:41.182+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 1.223 seconds
+[2024-10-01T03:20:11.365+0000] {processor.py:186} INFO - Started process (PID=251) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:20:11.366+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:20:11.369+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:20:11.369+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:20:12.104+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:20:12.124+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:20:12.124+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:20:12.143+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:20:12.143+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:20:12.159+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.801 seconds
+[2024-10-01T03:20:42.631+0000] {processor.py:186} INFO - Started process (PID=271) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:20:42.632+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:20:42.633+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:20:42.633+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:20:43.334+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:20:43.354+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:20:43.353+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:20:43.371+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:20:43.370+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:20:43.385+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.759 seconds
+[2024-10-01T03:21:13.890+0000] {processor.py:186} INFO - Started process (PID=291) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:21:13.891+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:21:13.894+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:21:13.893+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:21:14.802+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:21:14.845+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:21:14.844+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:21:14.876+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:21:14.876+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:21:14.911+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 1.028 seconds
+[2024-10-01T03:21:45.089+0000] {processor.py:186} INFO - Started process (PID=311) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:21:45.090+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:21:45.092+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:21:45.091+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:21:45.803+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:21:45.828+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:21:45.827+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:21:45.845+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:21:45.845+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:21:45.856+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.771 seconds
+[2024-10-01T03:22:16.535+0000] {processor.py:186} INFO - Started process (PID=331) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:22:16.537+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:22:16.540+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:22:16.539+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:22:17.617+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:22:17.661+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:22:17.660+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:22:17.697+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:22:17.696+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:22:17.726+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 1.198 seconds
+[2024-10-01T03:22:47.900+0000] {processor.py:186} INFO - Started process (PID=351) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:22:47.909+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:22:47.912+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:22:47.912+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:22:48.557+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:22:48.578+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:22:48.577+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:22:48.594+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:22:48.594+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:22:48.604+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.710 seconds
+[2024-10-01T03:23:19.099+0000] {processor.py:186} INFO - Started process (PID=371) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:23:19.108+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:23:19.110+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:23:19.110+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:23:19.732+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:23:19.750+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:23:19.750+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:23:19.766+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:23:19.766+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:23:19.784+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.689 seconds
+[2024-10-01T03:23:50.302+0000] {processor.py:186} INFO - Started process (PID=391) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:23:50.303+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:23:50.305+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:23:50.305+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:23:50.909+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:23:50.932+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:23:50.932+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:23:50.950+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:23:50.950+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:23:50.960+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.662 seconds
+[2024-10-01T03:24:21.703+0000] {processor.py:186} INFO - Started process (PID=411) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:24:21.704+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:24:21.706+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:24:21.705+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:24:22.325+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:24:22.351+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:24:22.351+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:24:22.368+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:24:22.368+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:24:22.387+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.688 seconds
+[2024-10-01T03:24:53.083+0000] {processor.py:186} INFO - Started process (PID=431) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:24:53.092+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:24:53.094+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:24:53.094+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:24:53.709+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:24:53.732+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:24:53.731+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:24:53.747+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:24:53.746+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:24:53.765+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.686 seconds
+[2024-10-01T03:25:24.336+0000] {processor.py:186} INFO - Started process (PID=451) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:25:24.337+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:25:24.339+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:25:24.339+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:25:25.127+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:25:25.149+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:25:25.149+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:25:25.170+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:25:25.169+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:25:25.199+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.869 seconds
+[2024-10-01T03:25:55.542+0000] {processor.py:186} INFO - Started process (PID=471) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:25:55.551+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:25:55.553+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:25:55.553+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:25:56.269+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:25:56.288+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:25:56.287+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:25:56.309+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:25:56.309+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:25:56.319+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.781 seconds
+[2024-10-01T03:26:27.066+0000] {processor.py:186} INFO - Started process (PID=491) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:26:27.067+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:26:27.070+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:26:27.069+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:26:27.699+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:26:27.719+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:26:27.719+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:26:27.742+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:26:27.742+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:26:27.762+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.702 seconds
+[2024-10-01T03:26:58.442+0000] {processor.py:186} INFO - Started process (PID=511) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:26:58.443+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:26:58.446+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:26:58.445+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:26:59.060+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:26:59.078+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:26:59.078+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:26:59.094+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:26:59.094+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:26:59.113+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.676 seconds
+[2024-10-01T03:27:29.657+0000] {processor.py:186} INFO - Started process (PID=531) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:27:29.666+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:27:29.668+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:27:29.668+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:27:30.290+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:27:30.314+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:27:30.313+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:27:30.335+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:27:30.334+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:27:30.357+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.704 seconds
+[2024-10-01T03:28:00.884+0000] {processor.py:186} INFO - Started process (PID=551) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:28:00.885+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:28:00.887+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:28:00.887+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:28:01.508+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:28:01.526+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:28:01.525+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:28:01.550+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:28:01.550+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:28:01.571+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.691 seconds
+[2024-10-01T03:28:31.615+0000] {processor.py:186} INFO - Started process (PID=571) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:28:31.615+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:28:31.618+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:28:31.617+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:28:32.513+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:28:32.548+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:28:32.548+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:28:32.570+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:28:32.569+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:28:32.586+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.976 seconds
+[2024-10-01T03:29:02.747+0000] {processor.py:186} INFO - Started process (PID=591) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:29:02.756+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:29:02.758+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:29:02.758+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:29:03.418+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:29:03.442+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:29:03.442+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:29:03.460+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:29:03.460+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:29:03.480+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.737 seconds
+[2024-10-01T03:29:33.956+0000] {processor.py:186} INFO - Started process (PID=611) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:29:33.965+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:29:33.967+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:29:33.967+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:29:34.672+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:29:34.702+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:29:34.702+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:29:34.720+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:29:34.720+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:29:34.747+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.796 seconds
+[2024-10-01T03:30:05.188+0000] {processor.py:186} INFO - Started process (PID=631) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:30:05.196+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:30:05.198+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:30:05.198+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:30:05.839+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:30:05.858+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:30:05.858+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:30:05.876+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:30:05.876+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:30:05.887+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.705 seconds
+[2024-10-01T03:30:36.619+0000] {processor.py:186} INFO - Started process (PID=651) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:30:36.620+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:30:36.622+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:30:36.622+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:30:37.533+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:30:37.563+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:30:37.563+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:30:37.580+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:30:37.580+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:30:37.591+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.985 seconds
+[2024-10-01T03:31:07.795+0000] {processor.py:186} INFO - Started process (PID=671) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:31:07.803+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:31:07.805+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:31:07.805+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:31:08.498+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:31:08.526+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:31:08.525+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:31:08.547+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:31:08.546+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:31:08.570+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.780 seconds
+[2024-10-01T03:31:38.979+0000] {processor.py:186} INFO - Started process (PID=691) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:31:38.980+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:31:38.982+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:31:38.982+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:31:39.660+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:31:39.679+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:31:39.678+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:31:39.701+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:31:39.701+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:31:39.724+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.749 seconds
+[2024-10-01T03:32:10.194+0000] {processor.py:186} INFO - Started process (PID=711) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:32:10.203+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:32:10.204+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:32:10.204+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:32:10.853+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:32:10.871+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:32:10.871+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:32:10.888+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:32:10.887+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:32:10.909+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.719 seconds
+[2024-10-01T03:32:41.578+0000] {processor.py:186} INFO - Started process (PID=731) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:32:41.587+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:32:41.589+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:32:41.588+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:32:42.237+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:32:42.257+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:32:42.257+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:32:42.276+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:32:42.276+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:32:42.293+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.720 seconds
+[2024-10-01T03:33:13.083+0000] {processor.py:186} INFO - Started process (PID=758) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:33:13.092+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:33:13.095+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:33:13.095+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:33:13.781+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:33:13.798+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:33:13.798+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:33:13.813+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:33:13.813+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:33:13.829+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.750 seconds
+[2024-10-01T03:33:44.306+0000] {processor.py:186} INFO - Started process (PID=778) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:33:44.315+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:33:44.319+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:33:44.318+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:33:44.931+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:33:44.949+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:33:44.949+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:33:44.965+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:33:44.965+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:33:44.979+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.677 seconds
+[2024-10-01T03:34:15.545+0000] {processor.py:186} INFO - Started process (PID=798) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:34:15.547+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:34:15.549+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:34:15.549+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:34:16.326+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:34:16.355+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:34:16.354+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:34:16.392+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:34:16.392+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:34:16.414+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.879 seconds
+[2024-10-01T03:34:47.001+0000] {processor.py:186} INFO - Started process (PID=818) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:34:47.003+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:34:47.007+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:34:47.006+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:34:47.977+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:34:48.008+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:34:48.008+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:34:48.028+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:34:48.027+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:34:48.041+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 1.050 seconds
+[2024-10-01T03:35:18.212+0000] {processor.py:186} INFO - Started process (PID=838) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:35:18.213+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:35:18.216+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:35:18.216+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:35:19.166+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:35:19.190+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:35:19.190+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:35:19.211+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:35:19.211+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:35:19.231+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 1.029 seconds
+[2024-10-01T03:35:49.390+0000] {processor.py:186} INFO - Started process (PID=858) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:35:49.399+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:35:49.402+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:35:49.401+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:35:50.096+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:35:50.114+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:35:50.113+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:35:50.134+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:35:50.134+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:35:50.147+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.763 seconds
+[2024-10-01T03:36:20.584+0000] {processor.py:186} INFO - Started process (PID=878) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:36:20.585+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:36:20.587+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:36:20.587+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:36:21.258+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:36:21.280+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:36:21.280+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:36:21.299+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:36:21.299+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:36:21.310+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.733 seconds
+[2024-10-01T03:36:52.001+0000] {processor.py:186} INFO - Started process (PID=898) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:36:52.009+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:36:52.011+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:36:52.011+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:36:52.640+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:36:52.661+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:36:52.660+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:36:52.680+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:36:52.680+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:36:52.700+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.706 seconds
+[2024-10-01T03:37:23.399+0000] {processor.py:186} INFO - Started process (PID=918) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:37:23.408+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:37:23.410+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:37:23.410+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:37:24.054+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:37:24.076+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:37:24.075+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:37:24.091+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:37:24.091+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:37:24.102+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.709 seconds
+[2024-10-01T03:37:54.632+0000] {processor.py:186} INFO - Started process (PID=938) to work on /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:37:54.633+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/tab_soccer_statics.py for tasks to queue
+[2024-10-01T03:37:54.635+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:37:54.635+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:37:55.489+0000] {processor.py:925} INFO - DAG(s) 'tab_soccer_statics' retrieved from /opt/airflow/dags/tab_soccer_statics.py
+[2024-10-01T03:37:55.513+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:37:55.512+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-01T03:37:55.531+0000] {logging_mixin.py:190} INFO - [2024-10-01T03:37:55.531+0000] {dag.py:4156} INFO - Setting next_dagrun for tab_soccer_statics to 2024-09-30 12:00:00+00:00, run_after=2024-10-01 12:00:00+00:00
+[2024-10-01T03:37:55.546+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/tab_soccer_statics.py took 0.920 seconds

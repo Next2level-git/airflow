@@ -35,20 +35,24 @@ class Fact_Match_Statics:
             conn_name=nxdb, query=queries.dim_teams_extract, source="dim_teams"
         )
         data["fact_matches"] = self.__extract(
-            conn_name=nxdb, query=queries.fact_matches_statistics_extract, source="fact_matches_statistics"
+            conn_name=nxdb,
+            query=queries.fact_matches_statistics_extract,
+            source="fact_matches_statistics",
         )
         if not data["fact_matches"].empty:
             matches_to_search = data["fact_matches"]
             matches_to_search["id_match"] = matches_to_search["id_match"].astype("str")
             matches_to_request = matches_to_search["id_match"].tolist()
-            results_list = []
+            results_list = pd.DataFrame()
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 results = executor.map(self.__send_get_request, matches_to_request)
                 for result in results:
                     if result is not None:
-                        results_list.append(result)
-
-        data['data_matches_statistics'] = pd.DataFrame(results_list)
+                        result = pd.DataFrame(result)
+                        results_list = pd.concat(
+                            [results_list, result], ignore_index=True
+                        )
+        data["data_matches_statistics"] = results_list
         self.__logger.info("Start transform data")
         data_to_load = self.transform_data(data=data)
         if not data_to_load.empty:
@@ -68,98 +72,154 @@ class Fact_Match_Statics:
             querystring = {"fixture": f"{matches_to_request}"}
             headers = {
                 "x-rapidapi-key": "5ada26f90cmsh42c7290dd83d724p1f721cjsn4b0c4acc71b9",
-                "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+                "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
             }
-            self.__logger.info(
-                f"Request to match {matches_to_request}"
-            )
             response = requests.get(url, headers=headers, params=querystring)
             if response.status_code == 200:
                 json_data = response.json()
-                data_with_token = {"id_match": matches_to_request, "response": json_data}
-                return data_with_token
+                json_data = json_data["response"]
+                data_with_token = {
+                    "id_match": matches_to_request,
+                    "response": json_data,
+                }
+                df_to_return = pd.DataFrame(data_with_token)
+                df_to_return["id_team"] = df_to_return["response"].apply(
+                    lambda x: x["team"]["id"]
+                )
+
+                def extract_statistics(stats):
+                    return {stat["type"]: stat["value"] for stat in stats["statistics"]}
+
+                stats_df = (
+                    df_to_return["response"].apply(extract_statistics).apply(pd.Series)
+                )
+                df_to_return = pd.concat(
+                    [df_to_return[["id_match", "id_team"]], stats_df], axis=1
+                )
+                return df_to_return
             else:
                 return None
         except Exception as e:
-            self.__logger.error("An error has occurred during data credential status. ", e)
+            self.__logger.error(
+                "An error has occurred during data credential status. ", e
+            )
             return None
 
     def transform_data(self, data):
         data_teams = data["dim_teams"][["uuid", "id_team"]]
-        fact_matches = data["fact_matches"][["id_match","uuid"]]
+        fact_matches = data["fact_matches"][["id_match", "uuid"]]
         data_matches_statistics = data["data_matches_statistics"]
-        data_matches_statistics['id_team'] = data_matches_statistics['response'].apply(lambda x: x['team']['id'])
-        def extract_statistics(stats):
-            return {stat['type']: stat['value'] for stat in stats['statistics']}
-        stats_df = data_matches_statistics['response'].apply(extract_statistics).apply(pd.Series)
-        data_matches_statistics = pd.concat([data_matches_statistics[['id_match','id_team']], stats_df], axis=1)
-        data_matches_statistics = data_matches_statistics[["Shots on Goal",
-                                                           "Shots off Goal",
-                                                           "Total Shots",
-                                                           "Blocked Shots",
-                                                           "Shots insidebox",
-                                                           "Shots outsidebox",
-                                                           "Fouls",
-                                                           "Corner Kicks",
-                                                           "Offsides",
-                                                           "Ball Possession",
-                                                           "Yellow Cards",
-                                                           "Red Cards",
-                                                           "Goalkeeper Saves",
-                                                           "Total passes",
-                                                           "Passes accurate",
-                                                           "id_team",
-                                                           "c",]]
-        data_matches_statistics = data_matches_statistics.rename(columns={"Shots on Goal": "shots_on_goal",
-                                                                          "Shots off Goal": "shots_off_goal",
-                                                                          "Total Shots": "total_shots",
-                                                                          "Blocked Shots": "blocked_shots",
-                                                                          "Shots insidebox": "shots_insidebox",
-                                                                          "Shots outsidebox": "shots_outsidebox",
-                                                                          "Fouls": "fouls",
-                                                                          "Corner Kicks": "corner_kics",
-                                                                          "Offsides": "offsides",
-                                                                          "Ball Possession": "ball_possesion",
-                                                                          "Yellow Cards": "yellow_cards",
-                                                                          "Red Cards": "red_cards",
-                                                                          "Goalkeeper Saves": "goalkeeper_saves",
-                                                                          "Total passes": "total_passes",
-                                                                          "Passes accurate": "passes_accurate"})
-        data_matches_statistics = data_matches_statistics.merge(data_teams,
-                                                                on='id_team',
-                                                                how='left')
-        data_matches_statistics = data_matches_statistics.rename(columns={"uuid":"uuid_team"})
-        data_matches_statistics = data_matches_statistics.merge(fact_matches,
-                                                                on='fact_matches',
-                                                                how='left')
-        data_matches_statistics = data_matches_statistics.rename(columns={"uuid":"uuid_match"})
-        data_matches_statistics['ball_possesion'] = data_matches_statistics['ball_possesion'].str.replace('%', '').astype(float) / 100
+        data_matches_statistics = data_matches_statistics[
+            [
+                "Shots on Goal",
+                "Shots off Goal",
+                "Total Shots",
+                "Blocked Shots",
+                "Shots insidebox",
+                "Shots outsidebox",
+                "Fouls",
+                "Corner Kicks",
+                "Offsides",
+                "Ball Possession",
+                "Yellow Cards",
+                "Red Cards",
+                "Goalkeeper Saves",
+                "Total passes",
+                "Passes accurate",
+                "id_team",
+                "id_match",
+            ]
+        ]
+        data_matches_statistics = data_matches_statistics.rename(
+            columns={
+                "Shots on Goal": "shots_on_goal",
+                "Shots off Goal": "shots_off_goal",
+                "Total Shots": "total_shots",
+                "Blocked Shots": "blocked_shots",
+                "Shots insidebox": "shots_insidebox",
+                "Shots outsidebox": "shots_outsidebox",
+                "Fouls": "fouls",
+                "Corner Kicks": "corner_kics",
+                "Offsides": "offsides",
+                "Ball Possession": "ball_possesion",
+                "Yellow Cards": "yellow_cards",
+                "Red Cards": "red_cards",
+                "Goalkeeper Saves": "goalkeeper_saves",
+                "Total passes": "total_passes",
+                "Passes accurate": "passes_accurate",
+            }
+        )
+        data_matches_statistics = data_matches_statistics.merge(
+            data_teams, on="id_team", how="left"
+        )
+        data_matches_statistics = data_matches_statistics.rename(
+            columns={"uuid": "uuid_team"}
+        )
+        data_matches_statistics = data_matches_statistics.merge(
+            fact_matches, on="id_match", how="left"
+        )
+        data_matches_statistics = data_matches_statistics.rename(
+            columns={"uuid": "uuid_match"}
+        )
+        data_matches_statistics["ball_possesion"] = (
+            data_matches_statistics["ball_possesion"].str.replace("%", "").astype(float)
+            / 100
+        )
+        data_matches_statistics = data_matches_statistics.drop(
+            columns=["id_match", "id_team"]
+        )
         if not data_matches_statistics.empty:
-            data_matches_statistics["uuid"] = data_matches_statistics.apply(lambda _: uuid.uuid4(), axis=1)
+            data_matches_statistics["uuid"] = data_matches_statistics.apply(
+                lambda _: uuid.uuid4(), axis=1
+            )
             data_matches_statistics["created_at"] = pd.to_datetime(
                 datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
             )
             data_matches_statistics["updated_at"] = pd.to_datetime(
                 datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
             )
-            data_matches_statistics["shots_on_goal"] = data_matches_statistics["shots_on_goal"].astype("Int64")
-            data_matches_statistics["shots_off_goal"] = data_matches_statistics["shots_off_goal"].astype("Int64")
-            data_matches_statistics["total_shots"] = data_matches_statistics["total_shots"].astype("Int64")
+            data_matches_statistics["shots_on_goal"] = data_matches_statistics[
+                "shots_on_goal"
+            ].astype("Int64")
+            data_matches_statistics["shots_off_goal"] = data_matches_statistics[
+                "shots_off_goal"
+            ].astype("Int64")
+            data_matches_statistics["total_shots"] = data_matches_statistics[
+                "total_shots"
+            ].astype("Int64")
             data_matches_statistics["blocked_shots"] = data_matches_statistics[
                 "blocked_shots"
             ].astype("Int64")
             data_matches_statistics["shots_insidebox"] = data_matches_statistics[
                 "shots_insidebox"
             ].astype("Int64")
-            data_matches_statistics["shots_outsidebox"] = data_matches_statistics["shots_outsidebox"].astype("Int64")
-            data_matches_statistics["fouls"] = data_matches_statistics["fouls"].astype("Int64")
-            data_matches_statistics["corner_kics"] = data_matches_statistics["corner_kics"].astype("Int64")
-            data_matches_statistics["offsides"] = data_matches_statistics["offsides"].astype("Int64")
-            data_matches_statistics["yellow_cards"] = data_matches_statistics["yellow_cards"].astype("Int64")
-            data_matches_statistics["red_cards"] = data_matches_statistics["red_cards"].astype("Int64")
-            data_matches_statistics["goalkeeper_saves"] = data_matches_statistics["goalkeeper_saves"].astype("Int64")
-            data_matches_statistics["total_passes"] = data_matches_statistics["total_passes"].astype("Int64")
-            data_matches_statistics["passes_accurate"] = data_matches_statistics["passes_accurate"].astype("Int64")
+            data_matches_statistics["shots_outsidebox"] = data_matches_statistics[
+                "shots_outsidebox"
+            ].astype("Int64")
+            data_matches_statistics["fouls"] = data_matches_statistics["fouls"].astype(
+                "Int64"
+            )
+            data_matches_statistics["corner_kics"] = data_matches_statistics[
+                "corner_kics"
+            ].astype("Int64")
+            data_matches_statistics["offsides"] = data_matches_statistics[
+                "offsides"
+            ].astype("Int64")
+            data_matches_statistics["yellow_cards"] = data_matches_statistics[
+                "yellow_cards"
+            ].astype("Int64")
+            data_matches_statistics["red_cards"] = data_matches_statistics[
+                "red_cards"
+            ].astype("Int64")
+            data_matches_statistics["goalkeeper_saves"] = data_matches_statistics[
+                "goalkeeper_saves"
+            ].astype("Int64")
+            data_matches_statistics["total_passes"] = data_matches_statistics[
+                "total_passes"
+            ].astype("Int64")
+            data_matches_statistics["passes_accurate"] = data_matches_statistics[
+                "passes_accurate"
+            ].astype("Int64")
 
         return data_matches_statistics
 

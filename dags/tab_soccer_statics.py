@@ -9,7 +9,7 @@ from src.soccer_statics.extract_data import Request_Data
 from src.soccer_statics.dim_teams import Dim_Teams
 from src.soccer_statics.dim_league import Dim_League
 from src.soccer_statics.fact_matches import Fact_Match
-from src.soccer_statics.fact_matches import Fact_Match_Statics
+from src.soccer_statics.fact_matches_statics import Fact_Match_Statics
 
 START_DATE = days_ago(1)
 
@@ -77,6 +77,7 @@ def fact_matches(**kwargs):
         )
         raise
 
+
 def fact_matches_statistics():
     try:
         pf = Fact_Match_Statics()
@@ -95,7 +96,7 @@ default_args = {
     "depends_on_past": False,
     "start_date": START_DATE,
     "retries": 1,
-    "retry_delay": timedelta(minutes=1),
+    "retry_delay": timedelta(seconds=10),
     "max_active_runs": 1,
 }
 

@@ -1,0 +1,161 @@
+[2024-09-30T13:56:39.064+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-30T13:56:39.075+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tab_soccer_statics.fact_matches_statistics scheduled__2024-09-29T12:00:00+00:00 [queued]>
+[2024-09-30T13:56:39.081+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tab_soccer_statics.fact_matches_statistics scheduled__2024-09-29T12:00:00+00:00 [queued]>
+[2024-09-30T13:56:39.081+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2024-09-30T13:56:39.090+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): fact_matches_statistics> on 2024-09-29 12:00:00+00:00
+[2024-09-30T13:56:39.099+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2478) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-30T13:56:39.100+0000] {standard_task_runner.py:72} INFO - Started process 2491 to run task
+[2024-09-30T13:56:39.100+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'tab_soccer_statics', 'fact_matches_statistics', 'scheduled__2024-09-29T12:00:00+00:00', '--job-id', '158', '--raw', '--subdir', 'DAGS_FOLDER/tab_soccer_statics.py', '--cfg-path', '/tmp/tmp8jjx7m_x']
+[2024-09-30T13:56:39.102+0000] {standard_task_runner.py:105} INFO - Job 158: Subtask fact_matches_statistics
+[2024-09-30T13:56:39.132+0000] {task_command.py:467} INFO - Running <TaskInstance: tab_soccer_statics.fact_matches_statistics scheduled__2024-09-29T12:00:00+00:00 [running]> on host 58fa97ed942d
+[2024-09-30T13:56:39.191+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='daniel.cristancho' AIRFLOW_CTX_DAG_ID='tab_soccer_statics' AIRFLOW_CTX_TASK_ID='fact_matches_statistics' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T12:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-29T12:00:00+00:00'
+[2024-09-30T13:56:39.192+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-30T13:56:41.014+0000] {fact_matches_statics.py:32} INFO - Start extract loaded data
+[2024-09-30T13:56:41.015+0000] {fact_matches_statics.py:185} INFO - Staring data extraction for dim_teams
+[2024-09-30T13:56:42.436+0000] {fact_matches_statics.py:189} INFO - 80 rows extracted from dim_teams
+[2024-09-30T13:56:42.437+0000] {fact_matches_statics.py:190} INFO - Data extraction successfully finished
+[2024-09-30T13:56:42.437+0000] {fact_matches_statics.py:185} INFO - Staring data extraction for fact_matches_statistics
+[2024-09-30T13:56:42.645+0000] {fact_matches_statics.py:189} INFO - 1 rows extracted from fact_matches_statistics
+[2024-09-30T13:56:42.646+0000] {fact_matches_statics.py:190} INFO - Data extraction successfully finished
+[2024-09-30T13:56:42.647+0000] {fact_matches_statics.py:74} INFO - Request to match 1208558
+[2024-09-30T13:56:43.488+0000] {logging_mixin.py:190} INFO - {0: {'id_match': '1208558', 'response': [{'team': {'id': 530, 'name': 'Atletico Madrid', 'logo': 'https://media.api-sports.io/football/teams/530.png'}, 'statistics': [{'type': 'Shots on Goal', 'value': 4}, {'type': 'Shots off Goal', 'value': 2}, {'type': 'Total Shots', 'value': 12}, {'type': 'Blocked Shots', 'value': 6}, {'type': 'Shots insidebox', 'value': 8}, {'type': 'Shots outsidebox', 'value': 4}, {'type': 'Fouls', 'value': 11}, {'type': 'Corner Kicks', 'value': 5}, {'type': 'Offsides', 'value': 2}, {'type': 'Ball Possession', 'value': '51%'}, {'type': 'Yellow Cards', 'value': 3}, {'type': 'Red Cards', 'value': 1}, {'type': 'Goalkeeper Saves', 'value': 3}, {'type': 'Total passes', 'value': 570}, {'type': 'Passes accurate', 'value': 497}, {'type': 'Passes %', 'value': '87%'}, {'type': 'expected_goals', 'value': '1.28'}, {'type': 'goals_prevented', 'value': 0}]}, {'team': {'id': 541, 'name': 'Real Madrid', 'logo': 'https://media.api-sports.io/football/teams/541.png'}, 'statistics': [{'type': 'Shots on Goal', 'value': 4}, {'type': 'Shots off Goal', 'value': 4}, {'type': 'Total Shots', 'value': 12}, {'type': 'Blocked Shots', 'value': 4}, {'type': 'Shots insidebox', 'value': 5}, {'type': 'Shots outsidebox', 'value': 7}, {'type': 'Fouls', 'value': 11}, {'type': 'Corner Kicks', 'value': 5}, {'type': 'Offsides', 'value': 0}, {'type': 'Ball Possession', 'value': '49%'}, {'type': 'Yellow Cards', 'value': 1}, {'type': 'Red Cards', 'value': 0}, {'type': 'Goalkeeper Saves', 'value': 3}, {'type': 'Total passes', 'value': 548}, {'type': 'Passes accurate', 'value': 490}, {'type': 'Passes %', 'value': '89%'}, {'type': 'expected_goals', 'value': '0.76'}, {'type': 'goals_prevented', 'value': 0}]}]}}
+[2024-09-30T13:56:43.494+0000] {logging_mixin.py:190} INFO -                                                           0
+id_match                                            1208558
+response  [{'team': {'id': 530, 'name': 'Atletico Madrid...
+[2024-09-30T13:56:43.494+0000] {fact_matches_statics.py:53} INFO - Start transform data
+[2024-09-30T13:56:43.496+0000] {logging_mixin.py:190} INFO - ****************** Unexpected error update fact matches statistics:  (<class 'KeyError'>, KeyError('response'), <traceback object at 0x7299d7d54ec0>)
+[2024-09-30T13:56:43.496+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 160, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index_class_helper.pxi", line 70, in pandas._libs.index.Int64Engine._check_type
+KeyError: 'response'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/tab_soccer_statics.py", line 83, in fact_matches_statistics
+    pf.run()
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 54, in run
+    data_to_load = self.transform_data(data=data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 93, in transform_data
+    data_matches_statistics['id_team'] = data_matches_statistics['response'].apply(lambda x: x['team']['id'])
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'response'
+[2024-09-30T13:56:43.506+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=tab_soccer_statics, task_id=fact_matches_statistics, run_id=scheduled__2024-09-29T12:00:00+00:00, execution_date=20240929T120000, start_date=20240930T135639, end_date=20240930T135643
+[2024-09-30T13:56:43.522+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-30T13:56:43.522+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 158 for task fact_matches_statistics ('response'; 2491)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 160, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index_class_helper.pxi", line 70, in pandas._libs.index.Int64Engine._check_type
+KeyError: 'response'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/tab_soccer_statics.py", line 83, in fact_matches_statistics
+    pf.run()
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 54, in run
+    data_to_load = self.transform_data(data=data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 93, in transform_data
+    data_matches_statistics['id_team'] = data_matches_statistics['response'].apply(lambda x: x['team']['id'])
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'response'
+[2024-09-30T13:56:43.536+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-30T13:56:43.548+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-30T13:56:43.549+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

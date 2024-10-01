@@ -1,0 +1,165 @@
+[2024-09-30T06:25:55.500+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-30T06:25:55.514+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tab_soccer_statics.fact_matches_statistics manual__2024-09-30T04:11:00.809343+00:00 [queued]>
+[2024-09-30T06:25:55.519+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tab_soccer_statics.fact_matches_statistics manual__2024-09-30T04:11:00.809343+00:00 [queued]>
+[2024-09-30T06:25:55.520+0000] {taskinstance.py:2865} INFO - Starting attempt 13 of 14
+[2024-09-30T06:25:55.530+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): fact_matches_statistics> on 2024-09-30 04:11:00.809343+00:00
+[2024-09-30T06:25:55.540+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=978) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-30T06:25:55.542+0000] {standard_task_runner.py:72} INFO - Started process 991 to run task
+[2024-09-30T06:25:55.542+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'tab_soccer_statics', 'fact_matches_statistics', 'manual__2024-09-30T04:11:00.809343+00:00', '--job-id', '138', '--raw', '--subdir', 'DAGS_FOLDER/tab_soccer_statics.py', '--cfg-path', '/tmp/tmphpdgmauc']
+[2024-09-30T06:25:55.544+0000] {standard_task_runner.py:105} INFO - Job 138: Subtask fact_matches_statistics
+[2024-09-30T06:25:55.579+0000] {task_command.py:467} INFO - Running <TaskInstance: tab_soccer_statics.fact_matches_statistics manual__2024-09-30T04:11:00.809343+00:00 [running]> on host 58fa97ed942d
+[2024-09-30T06:25:55.653+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='daniel.cristancho' AIRFLOW_CTX_DAG_ID='tab_soccer_statics' AIRFLOW_CTX_TASK_ID='fact_matches_statistics' AIRFLOW_CTX_EXECUTION_DATE='2024-09-30T04:11:00.809343+00:00' AIRFLOW_CTX_TRY_NUMBER='13' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-30T04:11:00.809343+00:00'
+[2024-09-30T06:25:55.655+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-30T06:25:57.544+0000] {fact_matches_statics.py:33} INFO - Start extract loaded data
+[2024-09-30T06:25:57.544+0000] {fact_matches_statics.py:189} INFO - Staring data extraction for dim_teams
+[2024-09-30T06:25:59.041+0000] {fact_matches_statics.py:193} INFO - 80 rows extracted from dim_teams
+[2024-09-30T06:25:59.042+0000] {fact_matches_statics.py:194} INFO - Data extraction successfully finished
+[2024-09-30T06:25:59.043+0000] {fact_matches_statics.py:189} INFO - Staring data extraction for fact_matches_statistics
+[2024-09-30T06:25:59.263+0000] {fact_matches_statics.py:193} INFO - 2 rows extracted from fact_matches_statistics
+[2024-09-30T06:25:59.263+0000] {fact_matches_statics.py:194} INFO - Data extraction successfully finished
+[2024-09-30T06:25:59.265+0000] {fact_matches_statics.py:75} INFO - Request to match 1208558
+[2024-09-30T06:25:59.266+0000] {fact_matches_statics.py:75} INFO - Request to match 1208557
+[2024-09-30T06:26:00.199+0000] {logging_mixin.py:190} INFO -   id_match                                           response
+0  1208558  [{'team': {'id': 530, 'name': 'Atletico Madrid...
+1  1208557  [{'team': {'id': 531, 'name': 'Athletic Club',...
+[2024-09-30T06:26:00.199+0000] {fact_matches_statics.py:54} INFO - Start transform data
+[2024-09-30T06:26:00.200+0000] {logging_mixin.py:190} INFO - ****************** Unexpected error update fact matches statistics:  (<class 'TypeError'>, TypeError('the JSON object must be str, bytes or bytearray, not list'), <traceback object at 0x7299d7d56240>)
+[2024-09-30T06:26:00.201+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/tab_soccer_statics.py", line 83, in fact_matches_statistics
+    pf.run()
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 55, in run
+    data_to_load = self.transform_data(data=data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 94, in transform_data
+    data_matches_statistics['response'] = data_matches_statistics['response'].apply(json.loads)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/series.py", line 4764, in apply
+    ).apply()
+      ^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/apply.py", line 1209, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/apply.py", line 1289, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/algorithms.py", line 1814, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2926, in pandas._libs.lib.map_infer
+  File "/usr/local/lib/python3.12/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+[2024-09-30T06:26:00.213+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=tab_soccer_statics, task_id=fact_matches_statistics, run_id=manual__2024-09-30T04:11:00.809343+00:00, execution_date=20240930T041100, start_date=20240930T062555, end_date=20240930T062600
+[2024-09-30T06:26:00.231+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-30T06:26:00.232+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 138 for task fact_matches_statistics (the JSON object must be str, bytes or bytearray, not list; 991)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/tab_soccer_statics.py", line 83, in fact_matches_statistics
+    pf.run()
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 55, in run
+    data_to_load = self.transform_data(data=data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/src/soccer_statics/fact_matches_statics.py", line 94, in transform_data
+    data_matches_statistics['response'] = data_matches_statistics['response'].apply(json.loads)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/series.py", line 4764, in apply
+    ).apply()
+      ^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/apply.py", line 1209, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/apply.py", line 1289, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/algorithms.py", line 1814, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2926, in pandas._libs.lib.map_infer
+  File "/usr/local/lib/python3.12/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+[2024-09-30T06:26:00.247+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-30T06:26:00.260+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-30T06:26:00.261+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
