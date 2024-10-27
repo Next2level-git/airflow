@@ -1,0 +1,31 @@
+[2024-10-08T01:48:26.690+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-08T01:48:26.710+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tab_soccer_statics.dim_league scheduled__2024-10-06T12:00:00+00:00 [queued]>
+[2024-10-08T01:48:26.723+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tab_soccer_statics.dim_league scheduled__2024-10-06T12:00:00+00:00 [queued]>
+[2024-10-08T01:48:26.724+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-08T01:48:26.741+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): dim_league> on 2024-10-06 12:00:00+00:00
+[2024-10-08T01:48:26.753+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=196) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-08T01:48:26.755+0000] {standard_task_runner.py:72} INFO - Started process 255 to run task
+[2024-10-08T01:48:26.756+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'tab_soccer_statics', 'dim_league', 'scheduled__2024-10-06T12:00:00+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/tab_soccer_statics.py', '--cfg-path', '/tmp/tmp6e40vcgu']
+[2024-10-08T01:48:26.758+0000] {standard_task_runner.py:105} INFO - Job 89: Subtask dim_league
+[2024-10-08T01:48:26.812+0000] {task_command.py:467} INFO - Running <TaskInstance: tab_soccer_statics.dim_league scheduled__2024-10-06T12:00:00+00:00 [running]> on host f74ce347067d
+[2024-10-08T01:48:26.899+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='daniel.cristancho' AIRFLOW_CTX_DAG_ID='tab_soccer_statics' AIRFLOW_CTX_TASK_ID='dim_league' AIRFLOW_CTX_EXECUTION_DATE='2024-10-06T12:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-06T12:00:00+00:00'
+[2024-10-08T01:48:26.900+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-08T01:48:26.940+0000] {warnings.py:112} WARNING - /opt/***/dags/tab_soccer_statics.py:52: FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+  data_extract = pd.read_json(data_extract)
+
+[2024-10-08T01:48:28.711+0000] {dim_league.py:35} INFO - Start extract loaded data
+[2024-10-08T01:48:28.711+0000] {dim_league.py:180} INFO - Staring data extraction for dim_league
+[2024-10-08T01:48:30.938+0000] {dim_league.py:184} INFO - 9 rows extracted from dim_league
+[2024-10-08T01:48:30.938+0000] {dim_league.py:185} INFO - Data extraction successfully finished
+[2024-10-08T01:48:30.938+0000] {dim_league.py:40} INFO - Start transform data
+[2024-10-08T01:48:34.044+0000] {dim_league.py:53} INFO - Start update old data
+[2024-10-08T01:48:35.461+0000] {dim_league.py:66} INFO - The update of 4 rows was made.
+[2024-10-08T01:48:35.563+0000] {logging_mixin.py:190} INFO - ****************** Success process update dim league
+[2024-10-08T01:48:35.565+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-08T01:48:35.583+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-08T01:48:35.583+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=tab_soccer_statics, task_id=dim_league, run_id=scheduled__2024-10-06T12:00:00+00:00, execution_date=20241006T120000, start_date=20241008T014826, end_date=20241008T014835
+[2024-10-08T01:48:35.621+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-08T01:48:35.639+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-08T01:48:35.640+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

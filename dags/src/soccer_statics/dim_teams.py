@@ -78,7 +78,7 @@ class Dim_Teams:
         df_away_team = pd.DataFrame(
             data_teams["teams"].apply(lambda x: x["away"]).tolist()
         )
-        df_away_team = df_home_team[["id", "name", "logo"]]
+        df_away_team = df_away_team[["id", "name", "logo"]]
         data_teams = pd.concat([df_away_team, df_home_team], ignore_index=True)
         data_teams = data_teams.reset_index(drop=True)
         data_teams = data_teams.drop_duplicates(subset=["id"], keep="first")

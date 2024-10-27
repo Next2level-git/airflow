@@ -19,7 +19,7 @@ class Request_Data:
 
         data = pd.DataFrame([])
         leagues = ast.literal_eval(Variable.get("LEAGUES_TO_CALL"))
-        year =  Variable.get("YEAR_TO_CALL")
+        year = Variable.get("YEAR_TO_CALL")
         for id_league in leagues:
             query_api = {
                 "league": f"{id_league}",
@@ -35,6 +35,6 @@ class Request_Data:
                     if item["fixture"]["status"]["short"] == "FT"
                 ]
                 data_new = pd.DataFrame(data_new)
-                data = pd.concat([data_new,data], ignore_index=True)
+                data = pd.concat([data_new, data], ignore_index=True)
 
         return data

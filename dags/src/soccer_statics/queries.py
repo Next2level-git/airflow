@@ -48,8 +48,8 @@ FROM soccer.fact_matches;
 fact_matches_statistics_extract = sql.SQL(
     """
 SELECT id_match,date_match,fm."uuid"
-FROM soccer.fact_matches fm 
-LEFT JOIN soccer.fact_matches_statistics fms ON fm."uuid" = fms.uuid_match 
+FROM soccer.fact_matches fm
+LEFT JOIN soccer.fact_matches_statistics fms ON fm."uuid" = fms.uuid_match
 WHERE fms."uuid" IS NULL
 ORDER BY 2 DESC
 LIMIT 30

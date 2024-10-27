@@ -20,9 +20,9 @@ def extract_data(**kwargs):
         data_extract = pf.request_return()
         kwargs["ti"].xcom_push(key="data_extract", value=data_extract.to_json())
         print("****************** Success process extract data from api scores")
-    except:
+    except Exception as e:
         print(
-            "****************** Unexpected error: ",
+            f"****************** Unexpected error: {e}",
             sys.exc_info(),
         )
         raise
@@ -37,9 +37,9 @@ def dim_teams(**kwargs):
         pf = Dim_Teams(data_teams=data_teams)
         pf.run()
         print("****************** Success process update dim teams")
-    except:
+    except Exception as e:
         print(
-            "****************** Unexpected error update dim teams: ",
+            f"****************** Unexpected error: {e}",
             sys.exc_info(),
         )
         raise
@@ -54,9 +54,9 @@ def dim_league(**kwargs):
         pf = Dim_League(data_league=data_league)
         pf.run()
         print("****************** Success process update dim league")
-    except:
+    except Exception as e:
         print(
-            "****************** Unexpected error update dim league: ",
+            f"****************** Unexpected error: {e}",
             sys.exc_info(),
         )
         raise
@@ -70,9 +70,9 @@ def fact_matches(**kwargs):
         pf = Fact_Match(data_extract=data_extract)
         pf.run()
         print("****************** Success process update fact matches")
-    except:
+    except Exception as e:
         print(
-            "****************** Unexpected error update fact matches: ",
+            f"****************** Unexpected error: {e}",
             sys.exc_info(),
         )
         raise
@@ -83,9 +83,9 @@ def fact_matches_statistics():
         pf = Fact_Match_Statics()
         pf.run()
         print("****************** Success process update fact matches statistics")
-    except:
+    except Exception as e:
         print(
-            "****************** Unexpected error update fact matches statistics: ",
+            f"****************** Unexpected error: {e}",
             sys.exc_info(),
         )
         raise
