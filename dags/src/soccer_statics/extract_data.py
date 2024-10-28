@@ -21,10 +21,7 @@ class Request_Data:
         leagues = ast.literal_eval(Variable.get("LEAGUES_TO_CALL"))
         year = Variable.get("YEAR_TO_CALL")
         for id_league in leagues:
-            query_api = {
-                "league": f"{id_league}",
-                "season": f"{year}"
-            }
+            query_api = {"league": f"{id_league}", "season": f"{year}"}
             print(query_api)
             response = requests.get(self.url, headers=self.header, params=query_api)
             if response.status_code == 200:

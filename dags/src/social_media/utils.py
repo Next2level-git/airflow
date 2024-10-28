@@ -58,13 +58,6 @@ def postgresql_execute_query(
         conn.close()
 
 
-DIM_TEAMS_UPDATE_COLUMNS = {
-    "uuid": "String",
-    "name_team": "String",
-    "team_logo": "String",
-    "updated_at": "Date",
-}
-
 USERS_UPDATE_COLUMNS = {
     "id": "String",
     "username": "String",
@@ -72,5 +65,11 @@ USERS_UPDATE_COLUMNS = {
     "bio": "String",
     "category": "String",
     "publications": "Float",
-    "last_publication": "Float",
+}
+
+INSTAGRAM_POST_UPDATE_COLUMNS = {
+    "id": "String",
+    "views_count": "Float",
+    "likes_count": "Float",
+    "comments_count": "Float",
 }

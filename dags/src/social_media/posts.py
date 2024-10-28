@@ -9,14 +9,14 @@ import json
 import ast
 
 
-class User_info:
+class Instagram_Publications:
 
     def __init__(self):
         self.host_db = Variable.get("HOST_DB_NEXT")
         self.user_db = Variable.get("USER_DB_NEXT")
         self.password_db = Variable.get("PASSWORD_DB_NEXT")
         self.db = Variable.get("DB_NEXT")
-        self.url = Variable.get("URL_SOCIAL_MEDIA_INSTAGRAM")
+        self.url = Variable.get("URL_POST_INFO_INSTAGRAM")
         self.header = json.loads(Variable.get("PASSWORD_HEADERS_API_INSTAGRAM"))
         log_fmt = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         logging.basicConfig(level=logging.INFO, format=log_fmt)
@@ -33,8 +33,10 @@ class User_info:
         nxdb.create_connection()
         self.__logger.info("Start extract loaded data")
         data = dict()
-        data["users"] = self.__extract(
-            conn_name=nxdb, query=queries.user_querie, source="users data"
+        data["instgagram_post"] = self.__extract(
+            conn_name=nxdb,
+            query=queries.instagram_post_querie,
+            source="Publications Instagram Loaded",
         )
         new_data, update_data = self.__transform_data(data=data)
         if not new_data.empty:
@@ -43,7 +45,7 @@ class User_info:
                 conn=nxdb,
                 data=new_data,
                 schema="social_media",
-                dest_table="users",
+                dest_table="instagram_publications",
                 truncate=False,
             )
 
@@ -51,8 +53,8 @@ class User_info:
             self.__logger.info("Start update old data")
             update_query = utils.cte_update_query(
                 update_df=update_data.copy(),
-                fields=utils.USERS_UPDATE_COLUMNS,
-                update_query=queries.update_users_query.as_string(nxdb),
+                fields=utils.INSTAGRAM_POST_UPDATE_COLUMNS,
+                update_query=queries.update_instagram_post_query.as_string(nxdb),
             )
             utils.postgresql_execute_query(
                 user=self.user_db,
@@ -73,32 +75,52 @@ class User_info:
             if response.status_code == 200:
                 response_data = response.json()
                 df = pd.DataFrame(response_data)
-                df_new = df.transpose()
-                df_new = df_new.drop(index="status")
-                df_new = df_new.reset_index()
-                df_new = df_new[
+                df = pd.DataFrame(
+                    response_data["data"]["user"]["edge_owner_to_timeline_media"][
+                        "edges"
+                    ]
+                )
+                df = pd.json_normalize(df["node"])
+                df["description"] = df["edge_media_to_caption.edges"].apply(
+                    lambda x: (
+                        x[0]["node"]["text"]
+                        if isinstance(x, list) and len(x) > 0
+                        else None
+                    )
+                )
+                df["created_at"] = pd.to_datetime(df["taken_at_timestamp"], unit="s")
+                if "video_view_count" not in df.columns:
+                    df["video_view_count"] = 0
+                df = df[
                     [
                         "id",
-                        "username",
-                        "full_name",
-                        "biography",
-                        "category",
-                        "media_count",
+                        "owner.id",
+                        "description",
+                        "created_at",
+                        "video_view_count",
+                        "edge_media_preview_like.count",
+                        "edge_media_to_comment.count",
                     ]
                 ]
-                load_data = pd.concat([df_new, load_data], ignore_index=True)
+                load_data = pd.concat([df, load_data], ignore_index=True)
         return load_data
 
     def __transform_data(self, data):
-        users_data = data["users"]
+        users_data = data["instgagram_post"]
         new_data = self.__extract_api_information()
         new_data = new_data.rename(
             columns={
-                "biography": "bio",
-                "media_count": "publications",
-                "latest_reel_media": "last_publication",
+                "owner.id": "user_id",
+                "video_view_count": "views_count",
+                "edge_media_preview_like.count": "likes_count",
+                "edge_media_to_comment.count": "comments_count",
             }
         )
+        new_data["views_count"] = new_data["views_count"].fillna(0)
+        new_data["user_id"] = new_data["user_id"].astype("Int64")
+        new_data["views_count"] = new_data["views_count"].astype("Int64")
+        new_data["likes_count"] = new_data["likes_count"].astype("Int64")
+        new_data["comments_count"] = new_data["comments_count"].astype("Int64")
         data_merge_dim = new_data.merge(
             users_data,
             on=["id"],
@@ -108,17 +130,15 @@ class User_info:
         )
         result_append = data_merge_dim[data_merge_dim["_merge"] == "left_only"]
         if not result_append.empty:
-            result_append["publications"] = result_append["publications"].astype(
-                "Int64"
-            )
             result_append = result_append[
                 [
                     "id",
-                    "username",
-                    "full_name",
-                    "bio",
-                    "category",
-                    "publications",
+                    "user_id",
+                    "description",
+                    "created_at",
+                    "views_count",
+                    "likes_count",
+                    "comments_count",
                 ]
             ]
         result_update = data_merge_dim[data_merge_dim["_merge"] == "both"]
@@ -134,20 +154,16 @@ class User_info:
 
             result_update["check_update"] = result_update[
                 [
-                    "username",
-                    "username_crr",
-                    "full_name",
-                    "full_name_crr",
-                    "bio",
-                    "bio_crr",
-                    "category",
-                    "category_crr",
-                    "publications",
-                    "publications_crr",
+                    "views_count",
+                    "views_count_crr",
+                    "likes_count",
+                    "likes_count_crr",
+                    "comments_count",
+                    "comments_count_crr",
                 ]
             ].apply(find_different_columns, axis=1)
             result_update = result_update[result_update["check_update"] != "N"]
-            result_update = result_update[utils.USERS_UPDATE_COLUMNS.keys()]
+            result_update = result_update[utils.INSTAGRAM_POST_UPDATE_COLUMNS.keys()]
 
         return result_append, result_update
 

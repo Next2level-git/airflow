@@ -5,6 +5,7 @@ from datetime import timedelta
 import sys
 
 from src.social_media.user_info import User_info
+from src.social_media.posts import Instagram_Publications
 
 START_DATE = days_ago(1)
 
@@ -14,6 +15,19 @@ def user_info():
         pf = User_info()
         pf.run()
         print("****************** Success process to extract data to users")
+    except Exception as e:
+        print(
+            f"****************** Unexpected error: {e}",
+            sys.exc_info(),
+        )
+        raise
+
+
+def instagram_publications():
+    try:
+        pf = Instagram_Publications()
+        pf.run()
+        print("****************** Success process to update instagram post")
     except Exception as e:
         print(
             f"****************** Unexpected error: {e}",
@@ -44,4 +58,10 @@ task_user_info = PythonOperator(
     dag=dag,
 )
 
-task_user_info
+task_instagram_publications = PythonOperator(
+    task_id="instagram_publications",
+    python_callable=instagram_publications,
+    dag=dag,
+)
+
+task_user_info >> task_instagram_publications
