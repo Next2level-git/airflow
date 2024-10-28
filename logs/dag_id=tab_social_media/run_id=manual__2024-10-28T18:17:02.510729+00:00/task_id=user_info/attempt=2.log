@@ -1,0 +1,25 @@
+[2024-10-28T20:23:44.762+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-28T20:23:44.793+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tab_social_media.user_info manual__2024-10-28T18:17:02.510729+00:00 [queued]>
+[2024-10-28T20:23:44.809+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tab_social_media.user_info manual__2024-10-28T18:17:02.510729+00:00 [queued]>
+[2024-10-28T20:23:44.809+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 3
+[2024-10-28T20:23:44.830+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): user_info> on 2024-10-28 18:17:02.510729+00:00
+[2024-10-28T20:23:44.844+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2825) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-28T20:23:44.846+0000] {standard_task_runner.py:72} INFO - Started process 2845 to run task
+[2024-10-28T20:23:44.847+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'tab_social_media', 'user_info', 'manual__2024-10-28T18:17:02.510729+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/tab_social_media.py', '--cfg-path', '/tmp/tmpnpiim40g']
+[2024-10-28T20:23:44.850+0000] {standard_task_runner.py:105} INFO - Job 35: Subtask user_info
+[2024-10-28T20:23:44.902+0000] {task_command.py:467} INFO - Running <TaskInstance: tab_social_media.user_info manual__2024-10-28T18:17:02.510729+00:00 [running]> on host 7f9c284dabe4
+[2024-10-28T20:23:44.992+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='daniel.cristancho' AIRFLOW_CTX_DAG_ID='tab_social_media' AIRFLOW_CTX_TASK_ID='user_info' AIRFLOW_CTX_EXECUTION_DATE='2024-10-28T18:17:02.510729+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-28T18:17:02.510729+00:00'
+[2024-10-28T20:23:44.993+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-28T20:23:47.190+0000] {user_info.py:36} INFO - Start extract loaded data
+[2024-10-28T20:23:47.190+0000] {user_info.py:195} INFO - Staring data extraction for users data
+[2024-10-28T20:23:47.524+0000] {user_info.py:199} INFO - 3 rows extracted from users data
+[2024-10-28T20:23:47.525+0000] {user_info.py:200} INFO - Data extraction successfully finished
+[2024-10-28T20:23:54.677+0000] {logging_mixin.py:190} INFO - ****************** Success process to extract data to users
+[2024-10-28T20:23:54.678+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-28T20:23:54.687+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-28T20:23:54.687+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=tab_social_media, task_id=user_info, run_id=manual__2024-10-28T18:17:02.510729+00:00, execution_date=20241028T181702, start_date=20241028T202344, end_date=20241028T202354
+[2024-10-28T20:23:54.727+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-28T20:23:54.747+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-28T20:23:54.748+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

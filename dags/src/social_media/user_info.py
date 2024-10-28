@@ -7,6 +7,8 @@ import src.social_media.queries as queries
 import src.social_media.utils as utils
 import json
 import ast
+import cairosvg
+import base64
 
 
 class User_info:
@@ -84,6 +86,7 @@ class User_info:
                         "biography",
                         "category",
                         "media_count",
+                        "hd_profile_pic_url_info"
                     ]
                 ]
                 load_data = pd.concat([df_new, load_data], ignore_index=True)
@@ -98,6 +101,27 @@ class User_info:
                 "media_count": "publications",
                 "latest_reel_media": "last_publication",
             }
+        )
+        new_data['url_image'] = new_data["hd_profile_pic_url_info"].apply(lambda x: x["url"])
+
+        def download_and_convert_to_base64(url):
+            try:
+                response = requests.get(url)
+                response.raise_for_status()
+
+                if response.headers["Content-Type"] == "image/svg+xml":
+                    svg_data = response.content
+                    png_data = cairosvg.svg2png(bytestring=svg_data)
+                else:
+                    png_data = response.content
+                base64_image = base64.b64encode(png_data).decode("utf-8")
+                return base64_image
+            except Exception as e:
+                print(f"Error to downlad image: {e}")
+                return None
+
+        new_data["profile_picture"] = new_data["url_image"].apply(
+            download_and_convert_to_base64
         )
         data_merge_dim = new_data.merge(
             users_data,
@@ -119,6 +143,7 @@ class User_info:
                     "bio",
                     "category",
                     "publications",
+                    "profile_picture"
                 ]
             ]
         result_update = data_merge_dim[data_merge_dim["_merge"] == "both"]
@@ -144,6 +169,8 @@ class User_info:
                     "category_crr",
                     "publications",
                     "publications_crr",
+                    "profile_picture",
+                    "profile_picture_crr",
                 ]
             ].apply(find_different_columns, axis=1)
             result_update = result_update[result_update["check_update"] != "N"]

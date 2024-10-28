@@ -1,0 +1,4 @@
+[2024-10-28T20:40:39.819+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-28T20:40:39.929+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tab_refresh_stats.daily_instagram_stats scheduled__2024-10-27T00:15:00+00:00 [queued]>
+[2024-10-28T20:40:39.972+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tab_refresh_stats.daily_instagram_stats scheduled__2024-10-27T00:15:00+00:00 [queued]>
+[2024-10-28T20:40:39.972+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2

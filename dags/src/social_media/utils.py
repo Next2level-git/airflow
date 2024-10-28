@@ -65,6 +65,7 @@ USERS_UPDATE_COLUMNS = {
     "bio": "String",
     "category": "String",
     "publications": "Float",
+    "profile_picture": "String",
 }
 
 INSTAGRAM_POST_UPDATE_COLUMNS = {
