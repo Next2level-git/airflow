@@ -66,6 +66,7 @@ DIM_TEAMS_UPDATE_COLUMNS = {
 }
 
 USERS_UPDATE_COLUMNS = {
+    "id": "String",
     "username": "String",
     "full_name": "String",
     "bio": "String",

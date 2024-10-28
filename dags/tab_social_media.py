@@ -32,7 +32,7 @@ default_args = {
 }
 
 dag = DAG(
-    "tab_soccer_statics",
+    "tab_social_media",
     default_args=default_args,
     schedule_interval="0 12 * * *",
     start_date=START_DATE,

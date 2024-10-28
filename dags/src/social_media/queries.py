@@ -2,7 +2,7 @@ from psycopg2 import sql
 
 user_querie = sql.SQL(
     """
-SELECT id, username, full_name, bio, category, publications, last_publication
+SELECT id::text, username, full_name, bio, category, publications, last_publication::text
 FROM social_media.users;
 """
 )
@@ -15,8 +15,8 @@ update_users_query = sql.SQL(
     bio = t.bio,
     category = t.category,
     publications = t.publications,
-    last_publication = t.last_publication,
+    last_publication = t.last_publication
     FROM cte AS t
-    WHERE f.id = t.id;
+    WHERE f.id::text = t.id::text;
     """
 )

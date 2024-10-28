@@ -20,7 +20,7 @@ class User_info:
         self.header = json.loads(Variable.get("PASSWORD_HEADERS_API_INSTAGRAM"))
         log_fmt = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         logging.basicConfig(level=logging.INFO, format=log_fmt)
-        self.__logger = logging.getLogger
+        self.__logger = logging.getLogger(__name__)
 
     def run(self):
 
@@ -36,7 +36,6 @@ class User_info:
         data["users"] = self.__extract(
             conn_name=nxdb, query=queries.user_querie, source="users data"
         )
-        data["new_data"] = self.__extract_api_information()
         new_data, update_data = self.__transform_data(data=data)
         if not new_data.empty:
             self.__logger.info("Start load new data")
@@ -72,7 +71,7 @@ class User_info:
         load_data = pd.DataFrame([])
         for account in accounts:
             query_api = {
-                "username_or_id": f"{account}"
+                "username_or_id_or_url": f"{account}"
             }
             response = requests.get(self.url, headers=self.header, params=query_api)
             if response.status_code == 200:
@@ -82,12 +81,11 @@ class User_info:
                 df_new = df_new[['id', 'username', 'full_name',
                                  'biography', 'category', 'media_count', 'latest_reel_media']]
                 load_data = pd.concat([df_new, load_data], ignore_index=True)
-
         return load_data
 
     def __transform_data(self, data):
-        users_data = data['users_data']
-        new_data = data['new_data']
+        users_data = data['users']
+        new_data = self.__extract_api_information()
         new_data = new_data.rename(columns={"biography": "bio",
                                             "media_count": "publications",
                                             "latest_reel_media": "last_publication"})
